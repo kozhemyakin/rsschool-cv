@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <link rel="icon" href="./images/favicon.ico">
+    <link href="https://fonts.cdnfonts.com/css/inika" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/inika');
+    </style>
+    <title>plants - kozhemyakin</title>
+    <script src="./scripts/index.js"></script>
+  </head>
+  <body>
+    <header class="container">
+        <nav>
+            <a href="#">
+                <img src="./images/logo.png" alt="plants logo">
+                <span>Plants</span>
+            </a>
+            <ul class="nav-list">
+                <li><a href="#welcome">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#price">Price</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+            <div class="mobile-hamburger" onclick="openMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="opened-mobile-menu" onclick="closeMenu()">
+                <ul class="mobile-menu__items">
+                    <li><a href="#welcome">Home</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#price">Price</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container welcome">
+            <div id="welcome" class="welcome-content">
+                <div class="leafs"></div>
+                <div class="welcome-right">
+                    <h1 class="welcome-content__title">We grow <span class="">plants</span> and give you oxygen</h1>
+                    <span class="welcome-content__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+                    <button class="btn learn-more" onclick="location.href='#about'">LEARN MORE</button>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="container">
+            <div class="about">
+                <div class="about-text">
+                    <h2>We are <span>professional experienced</span> gardeners</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                </div>
+                <div class="about-image">
+                </div>
+            </div>
+        </section>
+        <section id="service" class="container service">
+            <div class="service-header">
+                <h2 class="service-header__title">Service and our projects</h2>
+                <div class="service-header__filters">
+                    <button class="btn">Gardens</button>
+                    <button class="btn">Lawn</button>
+                    <button class="btn">Planting</button>
+                </div>
+            </div>
+            <div class="service-items">
+                <div class="service-items__item">
+                    <div class="service-items__item__img"></div>
+                    <div class="service-items__item-bottom">
+                        <h3>Garden care</h3>
+                        <span>Lorem Ipsum has been the industry</span>
+                    </div>
+                </div>
+                <div class="service-items__item">
+                    <div class="service-items__item__img"></div>
+                    <div class="service-items__item-bottom">
+                        <h3>Planting</h3>
+                        <span>Lorem Ipsum has been the industry</span>
+                    </div>
+                </div>
+                <div class="service-items__item">
+                    <div class="service-items__item__img"></div>
+                    <div class="service-items__item-bottom">
+                        <h3>Lawn care</h3>
+                        <span>Lorem Ipsum has been the industry</span>
+                    </div>
+                </div>
+                <div class="service-items__item">
+                    <div class="service-items__item__img"></div>
+                    <div class="service-items__item-bottom">
+                        <h3>Planting</h3>
+                        <span>Lorem Ipsum has been the industry</span>
+                    </div>
+                </div>
+                <div class="service-items__item">
+                    <div class="service-items__item__img"></div>
+                    <div class="service-items__item-bottom">
+                        <h3>Garden care</h3>
+                        <span>Lorem Ipsum has been the industry</span>
+                    </div>
+                </div>
+                <div class="service-items__item">
+                    <div class="service-items__item__img"></div>
+                    <div class="service-items__item-bottom">
+                        <h3>Planting</h3>
+                        <span>Lorem Ipsum has been the industry</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="price" class="container prices">
+            <div class="prices-content">
+                <div>
+                    <h1 class="price-title">Prices</h1>
+                    <div class="accordion">
+                        <button class="prices-btn__item">
+                            <span>Basic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <img src="./images/accordion_btn_prices.png" alt="opener">
+                        </button>
+                        <button class="prices-btn__item">
+                            <span>Standard</span>
+                            <img src="./images/accordion_btn_prices.png" alt="opener">
+                        </button>
+                        <button class="prices-btn__item">
+                            <span>Pro care&nbsp;&nbsp;</span>
+                            <img src="./images/accordion_btn_prices.png" alt="opener">
+                        </button>
+                    </div>
+                </div>
+                <div class="prices-contacts">
+                    <h2 class="price-description">Our best <span>gardeners</span> are ready to help you</h2>
+                    <button class="btn prices-btn" onclick="location.href='#contacts'">Contact us</button>
+                    <img src="./images/leafs__4.png" alt="leafs" class="prices-leafs">
+                </div>
+            </div>
+        </section>
+        <section id="contacts" class="container contacts">
+            <div class="contacts-woman">
+                <img src="./images/contact_woman_1.png" alt="woman">
+            </div>
+            <h2 class="contacts-title">Contact us</h2>
+            <button class="dropbtn">
+                City
+                <img class="dropdown-opener" src="./images/accordion_btn.png" alt="accordion">
+            </button>
+        </section>
+    </main>
+    <footer class="container">
+        <div class="footer-content">
+            <div class="footer-content__left">
+                <span>©</span>
+                <span>2022</span>
+                <span><a href="https://github.com/kozhemyakin">github</a></span>
+            </div>
+            <div class="footer-content__center">
+                <a href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+            </div>
+            <div class="footer-content__right">
+                <a href="https://rs.school/js-stage0/"><img src="./images/inst1.svg" alt="instagram"></a>
+                <a href="https://rs.school/js-stage0/"><img src="./images/fb1.svg" alt="facebook"></a>
+                <a href="https://rs.school/js-stage0/"><img src="./images/tw1.svg" alt="twitter"></a>
+                <a href="https://rs.school/js-stage0/"><img src="./images/pinterest1.svg" alt="pinterest"></a>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
