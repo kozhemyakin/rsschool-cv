@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>homepage - kozhemyakin</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/reset.css">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
+        <script src="./scripts/switchTheme.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navigation">
+                <div class="container nav-container">
+                    <a class="nav-logo" href="#">
+                        <div class="logo__img"></div>
+                        <h1 class="nav-logo__text">kozhemyakin</h1>
+                    </a>
+                    <div class="nav-links">
+                        <a href="#bio" class="nav-links__link">Main info</a>
+                        <a href="#social" class="nav-links__link">Contacts</a>
+                        <a href="https://github.com/kozhemyakin" target="_blank" class="nav-links__link">
+                            <i class="fa fa-github"></i>
+                            <span>Source</span>
+                        </a>
+                    </div>
+                    <div class="nav-right-buttons">
+                        <button id='switchButton' class="nav-switcher" onclick="switchTheme()">
+                                <svg class="switcher__icon" viewBox="0 0 24 24" fill="red" aria-hidden="true"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></g>
+                                </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container main-container">
+                <article id="bio" class="introducing">
+                    <div class="heading">
+                        <div class="heading__about">
+                            <h2 class="my-name">Sergey Kozhemyakin</h2>
+                            <div class="hello">
+                                <span>Hello, I'm a future frontend developer based in Belarus!</span>
+                            </div>
+                        </div>
+                        <div class="heading__photo"></div>
+                    </div>
+                    <div class="bio">
+                        <h3 class="subarticle-title">Bio</h3>
+                        <span>I'm QA engineer with almost 10 years of experience. I finished "Frontend Developer. React" course in July 2022. I have a dream to work as developer so I'm going to improve my skills and try to find a job as a developer. Wish me good luck!</span>
+                    </div>
+                    <div class="work">
+                        <h3 class="subarticle-title">Work</h3>
+                        <ul>
+                            <li>2013 - 2014 QA Engineer at <a href="https://aheadworks.com" target="_blank">AHEADWORKS co.</a></li>
+                            <li>2014 - 2020 QA Lead at <a href="https://aheadworks.com" target="_blank">AHEADWORKS co.</a></li>
+                            <li>2020 - current QA/AQA(Cypress) Engineer at <a href="https://uxpressia.com" target="_blank">UXPRESSIA co.</a></li>
+                        </ul>
+                    </div>
+                    <div class="my-stack">
+                        <h3 class="subarticle-title">Stack</h3>
+                        <span>HTML, CSS, JavaScript, React, Redux</span>
+                    </div>
+                    <div class="my-code">
+                        <h3 class="subarticle-title">Code</h3>
+                        <div class="code">
+                            <div>
+                                <span>
+                                    function getLengthOfMissingArray(arrayOfArrays) {<br>
+                                        const lengths = (arrayOfArrays || [])<br>
+                                          .map(a => a ? a.length : 0)<br>
+                                          .sort((a, b) => a - b)<br><br>
+                                          
+                                        if (lengths.includes(0)) {<br>
+                                          return 0<br>
+                                        }<br><br>
+                                      
+                                        for (let i = 0; i &lt; lengths.length - 1; i++) {<br>
+                                          if (lengths[i] + 1 !== lengths[i + 1]) {<br>
+                                            return lengths[i] + 1<br>
+                                          }
+                                        }<br><br>
+                                      
+                                        return 0<br>
+                                      }
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-edu">
+                        <h3 class="subarticle-title">Education</h3>
+                        <p>English level: B1</p>
+                        <p>Software Testing. EPAM. 2013</p>
+                        <p>Frontend Developer. Teachmeskills. 2022</p>
+                    </div>
+                    <div class="ilove">
+                        <h3 class="subarticle-title">I love</h3>
+                        <span>Playing table tennis, buying the stocks, petting cats, wearing the black shoes</span>
+                    </div>
+                    <div id="social" class="social">
+                        <h3 class="subarticle-title">Contacts</h3>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="https://github.com/kozhemyakin" target="_blank"><i class="fa fa-github"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/sergey-kozhemyakin-qa/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a href="mailto:kozhemyakin.ahead@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                                </li>
+                            </ul>  
+                    </div>
+                    <div class="rss">
+                        <h3 class="subarticle-title">RSS adv</h3>
+                        <a href="https://rs.school/js/"><img src="./images/logo.svg" alt="rss-logo"></a>
+                    </div>
+                </article>
+            </div>
+        </main>
+    <footer>
+        <p class="copyrights">© 2022 Sergey Kozhemyakin. All Rights Reserved.</p>
+    </footer>
+    </body>
+</html>
