@@ -4,7 +4,7 @@
 
 1. Kozhemyakin Sergey
 2. Discord - kozhemyakin, email - kozhemyakin.ahead@gmail.com
-3. I've been working as a QA Engineer for 9 years. Also, I write e2e autotests at Cypress. I want to learn JS and React and try to find a job as a Frontend developer.
+3. I've been working as a QA Engineer for 9 years. Also, I write e2e autotests at Cypress. I want to learn JS and React and try to find a job as a Frontend developer
 4. Stack: JS, React, Redux, Git, VS Code, Cypress
 5. Code example: 
 
