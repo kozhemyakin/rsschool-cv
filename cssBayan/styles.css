@@ -8,13 +8,11 @@ body {
 }
   
 fieldset {
-    /* padding: 8px; */
     background-color: rgb(249, 213, 158);
     border: none;
-    /* width: 500px; */
     height: 100vh;
     padding: 0;
-    word-wrap: break-word;
+    min-width: 500px;
 }
   
 ul {
@@ -34,22 +32,11 @@ ul li {
     cursor: pointer;
     background-color: rgb(249, 213, 158);
     width: 100%;
+    font-size: 16px;
 }
   
 label {
     cursor: pointer;
-}
-
-ul li:nth-of-type(1) {
-    animation-delay: 0.5s;
-}
-
-ul li:nth-of-type(2) {
-    animation-delay: 0.75s;
-}
-
-ul li:nth-of-type(3) {
-    animation-delay: 1s;
 }
 
 ul li label i {
@@ -76,7 +63,6 @@ ul li label i:after {
 }
 
 ul li input[type=radio] ~ img {
-    position: relative;
     cursor: pointer;
     width: 100%;
     z-index: 1;
@@ -104,7 +90,6 @@ ul li:hover input[type=radio] ~ img {
     padding-top: 10px;
     display: block;
     opacity: 100;
-
 }
   
 img {
@@ -121,7 +106,6 @@ ul li input[type=radio]:checked ~ label img {
     padding-top: 10px;
     display: block;
     opacity: 100;
-
 }
   
 ul li:hover label > img {
@@ -130,12 +114,10 @@ ul li:hover label > img {
     padding-top: 10px;
     display: block;
     opacity: 100;
-
 }
 
 ul li:hover label {
     color: rgb(26, 66, 243);
-
 }
 
 input {
@@ -168,19 +150,31 @@ img {
 }
 
 @media screen and (max-width: 821px) {
+    ul li {
+        font-size: 14px;
+    }
+
     fieldset {
-        /* min-width: 500px; */
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 501px) {
-    fieldset {
-        /* width: 90% !important; */
+@media screen and (max-width: 440px) {
+    ul li {
+        font-size: 12px;
+    }
+
+    ul li label i {
+        transform: translate(-16px, 0);
     }
 }
 
-@media screen and (max-width: 321px) {
-    fieldset {
+@media screen and (max-width: 360px) {
+    ul li {
+        font-size: 10px;
+    }
 
+    ul li label i {
+        transform: translate(-16px, 0);
     }
 }
