@@ -49,7 +49,7 @@ ul li label i {
 ul li label i:before, ul li label i:after {
     content: "";
     position: absolute;
-    background-color: #ff6873;
+    background-color: #f96b74;
     width: 3px;
     height: 9px;
 }
@@ -153,7 +153,7 @@ img {
     ul li {
         font-size: 14px;
     }
-
+    
     fieldset {
         width: 100%;
     }
