@@ -1,0 +1,154 @@
+body {
+    background-color: rgb(253, 243, 228);
+}
+  
+.accordion {
+    display: flex;
+    justify-content: center;
+}
+  
+fieldset {
+    padding: 8px;
+    background-color: rgb(249, 213, 158);
+    border: none;
+    min-width: 500px;
+
+}
+  
+ul {
+    list-style: none;
+    /* perspective: 900; */
+    padding: 0;
+    margin: 0;
+}
+  
+ul li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    /* padding-bottom: 4px; */
+    padding-top: 18px;
+    border-top: 1px dotted #dce7eb;
+    cursor: pointer;
+}
+  
+  label {
+    cursor: pointer;
+  }
+  
+  ul li:nth-of-type(1) {
+    animation-delay: 0.5s;
+  }
+  
+  ul li:nth-of-type(2) {
+    animation-delay: 0.75s;
+  }
+  
+  ul li:nth-of-type(3) {
+    animation-delay: 1s;
+  }
+  
+  ul li label i {
+    position: absolute;
+    transform: translate(-44px, 0);
+    margin-top: 0px;
+    right: 0;
+  }
+  
+  ul li label i:before, ul li label i:after {
+    content: "";
+    position: absolute;
+    background-color: #ff6873;
+    width: 3px;
+    height: 9px;
+  }
+  
+  ul li label i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+  }
+  
+  ul li label i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+  }
+  
+  ul li input[type=radio] ~ img {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    display: none;
+  }
+  
+  ul li input[type=radio]:checked ~ label i:before {
+    transform: translate(2px, 0) rotate(45deg);
+  }
+  
+  ul li input[type=radio]:checked ~ i:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+  }
+  
+  ul li input[type=radio]:checked ~ img {
+    height: 100px;
+    display: block;
+    opacity: 100;
+  }
+  
+  ul li:hover input[type=radio] ~ img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: block;
+    opacity: 100;
+  }
+  
+img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: none;
+    margin: 0 auto;
+}
+  
+ul li input[type=radio]:checked ~ label img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: block;
+    opacity: 100;
+}
+  
+ul li:hover label > img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: block;
+    opacity: 100;
+}
+
+ul li:hover label {
+    color: rgb(26, 66, 243);
+}
+
+input {
+    visibility: hidden;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 821px) {
+    li {
+        margin-top: 1111px;
+    }
+}
+
+@media (max-width: 777px) {
+    fieldset {
+        margin: 0 auto;
+        max-width: 222px;
+        padding: 0 109px;
+}
+  }
