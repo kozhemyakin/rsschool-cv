@@ -70,11 +70,11 @@ ul li input[type=radio] ~ img {
     display: none;
 }
 
-ul li input[type=radio]:checked ~ label i:before {
+ul li input[type=radio]:checked ~ label i:before, ul li input[type=radio]:hover ~ label i:before  {
     transform: translate(2px, 0) rotate(45deg);
 }
 
-ul li input[type=radio]:checked ~ i:after {
+ul li input[type=radio]:checked ~ i:after, ul li input[type=radio]:hover ~ i:after  {
     transform: translate(-2px, 0) rotate(-45deg);
 }
 
