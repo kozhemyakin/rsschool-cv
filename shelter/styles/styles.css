@@ -184,6 +184,10 @@ button {
     padding: 60px 0;
 }
 
+.our-friends__slider__card--button {
+    background: #F1CDB3;
+}
+
 .our-friends__slider__card {
     background: #FAFAFA;
     border-radius: 9px;
@@ -492,4 +496,50 @@ button {
 
 .pd3432 {
     padding: 34px 0 32px;
+}
+
+.header__nav > span:not(.active):hover {
+    color: #FAFAFA;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.active {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #FAFAFA;
+}
+
+.our-friends__slider__card--button:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+    transition: 1s;
+}
+
+/* .our-friends__slider__card--hidden {
+    display: none;
+}
+
+.our-friends__slider__card--hidden:hover {
+    display: block;
+} */
+
+.our-friends__slider__card--image:hover {
+    cursor: pointer;
+    background-image: url('./../images/icon-marker2.png');
+}
+
+.our-friends__slider__card--button {
+    background: none;
+    border: 2px solid #F1CDB3;
+}
+
+.not-only__content__text > button:hover, 
+.our-friends__slider ~ button:hover, 
+.our-friends__slider > button:hover {
+    background: #FDDCC4;
+    transition: 1s;
 }
