@@ -94,6 +94,16 @@ h2 {
     padding-bottom: 42px;
 }
 
+h3 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
 .not-only__content__text > p {
     font-family: 'Arial';
     font-style: normal;
@@ -127,6 +137,39 @@ button {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
+    cursor: pointer;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.about__image {
+    background-image: url("./../images/about-pets.png");
+    width: 25%;
+}
+
+.about__text__description {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #4C4C4C;
+}
+
+.about__text {
+    width: 36%;
+}
+
+.about__text > h3 {
+    padding-top: 14px;
+}
+
+.about__text > p:nth-child(2) {
+    padding: 24px 0;
 }
 
 .footer {
