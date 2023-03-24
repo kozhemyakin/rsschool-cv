@@ -62,15 +62,6 @@ h1 {
     font-family: 'Arial';
     font-size: 15px;
     color: #CDCDCD;
-}
-
-.header__nav {
-    display: flex;
-    gap: 35px;
-    align-items: center;
-    font-family: 'Arial';
-    font-size: 15px;
-    color: #CDCDCD;
     line-height: 160%;
 }
 
@@ -543,14 +534,6 @@ button {
     background: #FDDCC4;
     transition: 1s;
 }
-
-/* .our-friends__slider__card--hidden {
-    display: none;
-}
-
-.our-friends__slider__card--hidden:hover {
-    display: block;
-} */
 
 .our-friends__slider__card--image:hover {
     cursor: pointer;
