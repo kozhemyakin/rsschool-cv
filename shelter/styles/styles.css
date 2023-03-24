@@ -172,6 +172,70 @@ button {
     padding: 24px 0;
 }
 
+.our-friends {
+    background-color: #F6F6F6;
+    text-align: center;
+}
+
+.our-friends__slider {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.our-friends__slider__card {
+    background: #FAFAFA;
+    border-radius: 9px;
+    padding-bottom: 30px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(1) > div {
+    background-image: url("./../images/pets-katrine.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(2) > div {
+    background-image: url("./../images/pets-jennifer.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(3) > div {
+    background-image: url("./../images/pets-woody.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__card--name {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding: 30px 0;
+}
+
+.our-friends__slider__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+.button-arrow {
+    align-self: center;
+    padding: 13px 19px 23px 16px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background: none;
+    width: 52px;
+    height: 52px;
+    
+}
+
 .footer {
     padding: 40px 40px 0;
 }
