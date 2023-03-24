@@ -324,6 +324,87 @@ button {
     height: 60px;
 }
 
+.donation {
+    background: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.donation__image {
+    background: url('./../images/donation-dog.png');
+    width: 42%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 11px;
+}
+
+.donation__text {
+    width: 32%;
+    max-width: 380px;
+}
+
+.donation__text--title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation__text--card--title {
+    padding: 20px 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation__text--card--number--image {
+    background: url('./../images/credit-card.png');
+    width: 30px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.donation__text--card--number {
+    background: #F1CDB3;
+    border-radius: 9px;
+    padding: 10px 15px;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 319px;
+}
+
+.donation__text--card--number--numbers {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation__text--card--description {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+    padding-top: 20px;
+}
+
 .footer {
     padding: 40px 40px 0;
 }
