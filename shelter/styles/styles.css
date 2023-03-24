@@ -149,6 +149,8 @@ button {
 .about__image {
     background-image: url("./../images/about-pets.png");
     width: 25%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .about__text__description {
@@ -233,7 +235,174 @@ button {
     background: none;
     width: 52px;
     height: 52px;
-    
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+}
+
+.help-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 118px;
+    max-width: 1026px;
+}
+
+.help-items > div:nth-child(1) > div {
+    background: url('./../images/icon-pet-food.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.help-items__item--name {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.help-items > div:nth-child(2) > div {
+    background: url('./../images/icon-transportation.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(3) > div {
+    background: url('./../images/icon-toys.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(4) > div {
+    background: url('./../images/icon-bowls-and-cups.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(5) > div {
+    background: url('./../images/icon-shampoos.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(6) > div {
+    background: url('./../images/icon-vitamins.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(7) > div {
+    background: url('./../images/icon-medicines.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(8) > div {
+    background: url('./../images/icon-collars-leashes.png');
+    width: 60px;
+    height: 60px;
+}
+
+.help-items > div:nth-child(9) > div {
+    background: url('./../images/icon-sleeping-area.png');
+    width: 60px;
+    height: 60px;
+}
+
+.donation {
+    background: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.donation__image {
+    background: url('./../images/donation-dog.png');
+    width: 42%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 11px;
+}
+
+.donation__text {
+    width: 32%;
+    max-width: 380px;
+}
+
+.donation__text--title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation__text--card--title {
+    padding: 20px 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation__text--card--number--image {
+    background: url('./../images/credit-card.png');
+    width: 30px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.donation__text--card--number {
+    background: #F1CDB3;
+    border-radius: 9px;
+    padding: 10px 15px;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 319px;
+}
+
+.donation__text--card--number--numbers {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.donation__text--card--description {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+    padding-top: 20px;
 }
 
 .footer {
