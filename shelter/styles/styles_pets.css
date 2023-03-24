@@ -49,6 +49,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .header__logo > span {
