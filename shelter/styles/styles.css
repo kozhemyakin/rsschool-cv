@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Georgia';
     font-style: normal;
@@ -7,6 +11,12 @@ body {
 h1, h2, h3, p {
     padding: 0;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #CDCDCD;
+    cursor: pointer;
 }
 
 h1 {
@@ -65,7 +75,7 @@ h1 {
     line-height: 160%;
 }
 
-.header__nav > span:nth-child(1)::after {
+.header__nav > a:nth-child(1)::after {
     color: #FAFAFA;
     content: "";
     display: block;
@@ -139,6 +149,21 @@ button {
     cursor: pointer;
 }
 
+.not-only__content__text > a {
+    background: #F1CDB3;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 45px;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+}
+
 .about {
     display: flex;
     justify-content: center;
@@ -182,6 +207,10 @@ button {
     display: flex;
     justify-content: space-between;
     padding: 60px 0;
+}
+
+.our-friends__slider__card--button {
+    background: #F1CDB3;
 }
 
 .our-friends__slider__card {
@@ -329,7 +358,7 @@ button {
 }
 
 .brown-container {
-    background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+    background: url(./../images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
 }
 
 .donation {
@@ -484,6 +513,7 @@ button {
 .footer__address__line {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .pd40 {
@@ -492,4 +522,55 @@ button {
 
 .pd3432 {
     padding: 34px 0 32px;
+}
+
+.header__nav > a:not(.active):hover {
+    color: #FAFAFA;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.active {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #FAFAFA;
+}
+
+.our-friends__slider__card--button:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+    transition: 1s;
+}
+
+/* .our-friends__slider__card--hidden {
+    display: none;
+}
+
+.our-friends__slider__card--hidden:hover {
+    display: block;
+} */
+
+.our-friends__slider__card--image:hover {
+    cursor: pointer;
+    background-image: url('./../images/icon-marker2.png');
+}
+
+.our-friends__slider__card--button {
+    background: none;
+    border: 2px solid #F1CDB3;
+}
+
+.not-only__content__text > a:hover, 
+.our-friends__slider ~ button:hover, 
+.our-friends__slider > button:hover {
+    background: #FDDCC4;
+    transition: 1s;
+}
+
+.footer__description:hover {
+    color: #FDDCC4;
+    transition: 1s;
 }
