@@ -149,7 +149,7 @@ button {
     cursor: pointer;
 }
 
-.not-only__content__text > a {
+.btn {
     background: #F1CDB3;
     border: none;
     border-radius: 100px;
@@ -564,7 +564,7 @@ button {
 }
 
 .not-only__content__text > a:hover, 
-.our-friends__slider ~ button:hover, 
+.our-friends__slider ~ a:hover, 
 .our-friends__slider > button:hover {
     background: #FDDCC4;
     transition: 1s;
