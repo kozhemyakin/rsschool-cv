@@ -149,6 +149,8 @@ button {
 .about__image {
     background-image: url("./../images/about-pets.png");
     width: 25%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .about__text__description {
