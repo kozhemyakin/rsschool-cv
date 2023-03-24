@@ -1,0 +1,134 @@
+body {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1, h2, h3, p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+}
+
+.header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 90px;
+}
+
+.header__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header__logo > span {
+    font-family: 'Arial';
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+.header__nav {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    font-family: 'Arial';
+    font-size: 15px;
+    color: #CDCDCD;
+}
+
+.header__nav {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    font-family: 'Arial';
+    font-size: 15px;
+    color: #CDCDCD;
+    line-height: 160%;
+}
+
+.header__nav > span:nth-child(1)::after {
+    color: #FAFAFA;
+    content: "";
+    display: block;
+    border: 1px solid #FBD38D;
+    background: #F1CDB3;
+    width: 100%;
+}
+
+.not-only {
+    padding: 30px 40px 0;
+    background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+}
+
+.not-only__content__text {
+    width: 39%;
+    padding: 163px 0 243px;
+}
+
+h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
+    padding-bottom: 42px;
+}
+
+.not-only__content__text > p {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+    padding-bottom: 42px;
+}
+
+.not-only__content__img {
+    background-image: url("./../images/not-only-dog.png");
+    width: 58%;
+    height: 728px;
+}
+
+.not-only__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background: #F1CDB3;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 45px;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.footer {
+    padding: 40px 40px 0;
+}
