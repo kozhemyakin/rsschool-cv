@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Georgia';
     font-style: normal;
@@ -7,6 +11,12 @@ body {
 h1, h2, h3, p {
     padding: 0;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #CDCDCD;
+    cursor: pointer;
 }
 
 h1 {
@@ -65,7 +75,7 @@ h1 {
     line-height: 160%;
 }
 
-.header__nav > span:nth-child(1)::after {
+.header__nav > a:nth-child(1)::after {
     color: #FAFAFA;
     content: "";
     display: block;
@@ -125,6 +135,21 @@ h3 {
 }
 
 button {
+    background: #F1CDB3;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 45px;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.not-only__content__text > a {
     background: #F1CDB3;
     border: none;
     border-radius: 100px;
@@ -333,7 +358,7 @@ button {
 }
 
 .brown-container {
-    background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+    background: url(./../images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
 }
 
 .donation {
@@ -488,6 +513,7 @@ button {
 .footer__address__line {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .pd40 {
@@ -498,7 +524,7 @@ button {
     padding: 34px 0 32px;
 }
 
-.header__nav > span:not(.active):hover {
+.header__nav > a:not(.active):hover {
     color: #FAFAFA;
     cursor: pointer;
     transition: 1s;
@@ -537,9 +563,14 @@ button {
     border: 2px solid #F1CDB3;
 }
 
-.not-only__content__text > button:hover, 
+.not-only__content__text > a:hover, 
 .our-friends__slider ~ button:hover, 
 .our-friends__slider > button:hover {
     background: #FDDCC4;
+    transition: 1s;
+}
+
+.footer__description:hover {
+    color: #FDDCC4;
     transition: 1s;
 }
