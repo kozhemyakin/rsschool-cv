@@ -269,7 +269,6 @@ button {
 
 .our-friends__slider__card--button:hover {
     cursor: pointer;
-    background: #FDDCC4;
     transition: 1s;
 }
 
@@ -300,5 +299,152 @@ button {
 
 .footer__description:hover {
     color: #FDDCC4;
+    transition: 1s;
+}
+
+.our-friends {
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 80px 40px 100px;
+}
+
+.our-friends__slider {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.our-friends__slider__card--button {
+    background: none;
+}
+
+.our-friends__slider__card {
+    background: #FAFAFA;
+    border-radius: 9px;
+    padding-bottom: 30px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(1) > div {
+    background-image: url("./../images/pets-katrine111.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(2) > div {
+    background-image: url("./../images/pets-jennifer.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(3) > div {
+    background-image: url("./../images/pets-woody.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(4) > div {
+    background-image: url("./../images/pets-sof4.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(5) > div {
+    background-image: url("./../images/pets-timmy.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(6) > div {
+    background-image: url("./../images/pets-charly.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(7) > div {
+    background-image: url("./../images/pets-woody.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(8) > div {
+    background-image: url("./../images/pets-freddie.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__cards > div:nth-of-type(9) > div {
+    background-image: url("./../images/pets-fredkot.png");
+    width: 270px;
+    height: 270px;
+}
+
+.our-friends__slider__card--name {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding: 30px 0;
+}
+
+.our-friends__slider__cards {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 30px;
+}
+
+.our-friends__slider__card--button:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+    transition: 1s;
+}
+
+.our-friends__slider__card--image:hover {
+    cursor: pointer;
+    background-image: url('./../images/icon-marker2.png');
+}
+
+.our-friends__slider__card--button {
+    background: none;
+    border: 2px solid #F1CDB3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pagination__item {
+    box-sizing: border-box;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    padding-top: 12px;
+}
+
+.left {
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+}
+
+.current {
+    background-color: #F1CDB3;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.pagination > div:nth-child(4), .pagination > div:nth-child(5) {
+    cursor: pointer;
+}
+
+.pagination > div:nth-child(4):hover, .pagination > div:nth-child(5):hover {
+    background-color: #F1CDB3;
     transition: 1s;
 }
