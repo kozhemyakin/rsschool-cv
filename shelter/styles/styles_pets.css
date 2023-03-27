@@ -463,3 +463,9 @@ button {
     background-color: #F1CDB3;
     transition: 1s;
 }
+
+.footer__description:hover {
+    color: #FDDCC4;
+    transition: 1s;
+    cursor: pointer;
+}
