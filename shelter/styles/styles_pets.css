@@ -396,17 +396,19 @@ button {
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 30px;
+    cursor: pointer;
+}
+
+.our-friends__slider__card--image:hover {
+    cursor: pointer;
+    filter: contrast(0.9);
+    transition: 1s;
 }
 
 .our-friends__slider__card--button:hover {
     cursor: pointer;
     background: #FDDCC4;
-    transition: 1s;
-}
-
-.our-friends__slider__card--image:hover {
-    cursor: pointer;
-    background-image: url('./../images/icon-marker2.png');
+    transition: 1s; 
 }
 
 .our-friends__slider__card--button {
