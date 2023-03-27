@@ -411,6 +411,19 @@ button {
     transition: 1s; 
 }
 
+.our-friends__slider__card:hover > .our-friends__slider__card--image {
+    cursor: pointer;
+    filter: contrast(0.9);
+    transition: 1s;
+}
+
+.our-friends__slider__card:hover > .our-friends__slider__card--button {
+    cursor: pointer;
+    background: #FDDCC4;
+    border: 2px solid #FDDCC4;
+    transition: 1s; 
+}
+
 .our-friends__slider__card--button {
     background: none;
     border: 2px solid #F1CDB3;
