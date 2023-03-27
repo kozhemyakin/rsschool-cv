@@ -1,1 +1,0 @@
-console.log('Scrore: 100/100')
