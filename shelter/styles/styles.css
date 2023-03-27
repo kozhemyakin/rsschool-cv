@@ -154,6 +154,49 @@ button {
     cursor: pointer;
 }
 
+.btn-a-link {
+    background: #F1CDB3;
+    border: none;
+    border-radius: 100px;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929 !important;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+    width: 261px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.makeFriendLink {
+    background: #F1CDB3;
+    border: none;
+    border-radius: 100px;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929 !important;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+    width: 207px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-a-link__a {
+    color: #292929 !important;
+}
+
 .about {
     display: flex;
     justify-content: center;
@@ -537,7 +580,8 @@ button {
 
 .our-friends__slider__card--image:hover {
     cursor: pointer;
-    background-image: url('./../images/icon-marker2.png');
+    filter: contrast(0.9);
+    transition: 1s;
 }
 
 .our-friends__slider__card--button {
