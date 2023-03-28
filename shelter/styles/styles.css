@@ -347,7 +347,8 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 118px;
+    column-gap: 118px;
+    row-gap: 55px;
     max-width: 1026px;
 }
 
