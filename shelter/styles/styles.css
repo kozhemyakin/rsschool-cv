@@ -679,4 +679,30 @@ button {
     .makeFriendLink {
         margin: 0 auto;
     }
+
+    .about {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .about__text {
+        width: 430px;
+    }
+
+    .about__text > h3 {
+        padding-top: 0;
+    }
+
+    .about__text > p:nth-child(2) {
+        padding: 25px 0;
+    }
+
+    .about__image {
+        background-image: url(./../images/about-pets.png);
+        width: 300px;
+        height: 408px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 }
