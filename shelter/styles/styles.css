@@ -834,4 +834,42 @@ button {
     .container {
         padding: 42px 10px;
     }
+
+    .our-friends > h3 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+        justify-content: center;
+    }
+
+    .our-friends__slider__cards > div:nth-of-type(2) {
+        display: none;
+    }
+
+    .our-friends__slider {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 42px 0;
+        column-gap: 80px;
+        row-gap: 20px;
+    }
+
+    .our-friends__slider > button:nth-child(1) {
+        order: 2;
+    }
+
+    .our-friends__slider > button:nth-child(3) {
+        order: 3;
+    }
+
+    .our-friends__slider__card {
+
+    }
 }
