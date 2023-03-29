@@ -6,6 +6,8 @@ body {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 
 h1, h2, h3, p {
@@ -636,4 +638,45 @@ button {
 .footer__description:hover {
     color: #FDDCC4;
     transition: 1s;
+}
+
+@media screen and (max-width: 769px) {
+    .header {
+        padding-bottom: 60px;
+    }
+
+    .not-only__content {
+        flex-direction: column;
+    }
+
+    .not-only__content__text {
+        align-self: center;
+        padding: 0;
+        font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+
+    align-items: center;
+    color: #FFFFFF;
+    width: 460px;
+    }
+
+    .not-only__content__img {
+        align-self: end;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 593px;
+        margin-top: 100px;
+        width: 569px;
+    }
+
+    .not-only {
+        padding: 30px 30px 0;
+    }
+
+    .makeFriendLink {
+        margin: 0 auto;
+    }
 }
