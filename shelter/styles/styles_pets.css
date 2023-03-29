@@ -469,3 +469,31 @@ button {
     transition: 1s;
     cursor: pointer;
 }
+
+@media screen and (max-width: 769px) {
+    .footer {
+        padding: 30px 30px 0;
+        flex-wrap: wrap;
+        row-gap: 65px;
+    }
+
+    .footer__image-dog {
+        margin: 0 auto;
+    }
+
+    .our-friends {
+        padding: 60px 30px 70px;
+    }
+
+    .our-friends__slider {
+        padding: 30px 0 40px;
+    }
+
+    .our-friends__slider__cards {
+        justify-content: center;
+    }
+
+    .our-friends__slider__cards > div:nth-child(7), .our-friends__slider__cards > div:nth-child(8) {
+        display: none;
+    }
+}
