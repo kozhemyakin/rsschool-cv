@@ -742,4 +742,14 @@ button {
     .donation__text {
         width: 380px;
     }
+
+    .footer {
+        padding: 30px 30px 0;
+        flex-wrap: wrap;
+        row-gap: 65px;
+    }
+
+    .footer__image-dog {
+        margin: 0 auto;
+    }
 }
