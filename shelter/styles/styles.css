@@ -904,4 +904,57 @@ button {
         letter-spacing: 0.06em;
         color: #545454;
     }
+
+    .donation__text--title {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+        justify-content: center;
+    }
+
+    .donation__image {
+        width: 260px;
+        height: 135.2px;
+    }
+
+    .donation__text {
+        width: 100%;
+    }
+
+    .donation__text--card--title {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        display: flex;
+        align-items: center;
+        color: #545454;
+        letter-spacing: 0;
+        justify-content: center;
+    }
+
+    .donation__text--card--number--numbers {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+        gap: 0;
+    }
+
+    .donation {
+        gap: 42px;
+    }
 }
