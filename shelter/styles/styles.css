@@ -672,7 +672,7 @@ button {
     }
 
     .not-only {
-        padding: 30px 30px 0;
+        padding: 30px 30px 0 !important;
     }
 
     .makeFriendLink {
@@ -717,5 +717,13 @@ button {
 
     .container {
         padding: 80px 30px 100px;
+    }
+
+    .help-items {
+        column-gap: 60px;
+    }
+
+    .help-items__item {
+        width: 170px;
     }
 }
