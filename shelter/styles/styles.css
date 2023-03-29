@@ -869,7 +869,39 @@ button {
         order: 3;
     }
 
-    .our-friends__slider__card {
+    .help {
+        gap: 42px;
+        padding: 42px 15px;
+    }
 
+    .help > h3 {
+        font-size: 25px;
+    }
+
+    .help-items__item {
+        width: 130px;
+    }
+
+    .help-items {
+        column-gap: 30px;
+        row-gap: 30px;
+        justify-content: start;
+    }
+
+    .help-items__item {
+        gap: 20px;
+    }
+
+    .help-items__item > span {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
     }
 }
