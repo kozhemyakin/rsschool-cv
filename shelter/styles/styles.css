@@ -753,3 +753,85 @@ button {
         margin: 0 auto;
     }
 }
+
+@media screen and (max-width: 321px) {
+    .header__nav {
+        display: none;
+    }
+
+    .not-only {
+        padding: 30px 20px 0 !important;
+    }
+
+    .not-only__content__text {
+        width: 100%;
+    }
+
+    .not-only__content__text > h2 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+    }
+
+    .not-only__content__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .not-only__content__text > p {
+        width: 300px;
+    }
+
+    .not-only__content__img {
+        margin-top: 105px;
+    }
+
+    .not-only__content__img {
+        height: 260px;
+        width: 271px;
+        margin-left: 40px;
+        align-self: auto;
+    }
+
+    .about {
+        gap: 42px;
+    }
+
+    .about__text {
+        width: 270px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify
+    }
+
+    .about__text > h3 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+    }
+
+    .about__text > p:nth-child(2) {
+        padding: 25px 0 22px;
+    }
+
+    .container {
+        padding: 42px 10px;
+    }
+}
