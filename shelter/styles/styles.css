@@ -726,4 +726,20 @@ button {
     .help-items__item {
         width: 170px;
     }
+
+    .donation {
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+
+    .donation__image {
+        width: 505px;
+        height: 261px;
+        margin-top: 0px;
+    }
+
+    .donation__text {
+        width: 380px;
+    }
 }
