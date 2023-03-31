@@ -661,6 +661,16 @@ button {
     }
 }
 
+@media (min-width: 770px) and (max-width: 1180px) {
+    .our-friends__slider__cards {
+        gap: 30px;
+    }
+
+    .our-friends__slider__cards > div:nth-of-type(3) {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 769px) {
     .header {
         padding-bottom: 60px;
