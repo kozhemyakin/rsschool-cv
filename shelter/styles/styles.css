@@ -750,6 +750,10 @@ button {
         width: 380px;
     }
 
+    .donation__text--card--number {
+        max-width: 320px;
+    }
+
     .footer {
         padding: 30px 30px 0;
         flex-wrap: wrap;
@@ -761,7 +765,7 @@ button {
     }
 }
 
-@media screen and (max-width: 720px) {
+/* @media screen and (max-width: 720px) {
     .hamburger-menu {
         display: block;
     }
@@ -1011,7 +1015,7 @@ button {
     .footer__address > div:nth-child(3) {
         justify-content: start;
     }
-}
+} */
 
 @media screen and (max-width: 321px) {
     .hamburger-menu {
