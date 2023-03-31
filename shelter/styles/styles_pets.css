@@ -481,12 +481,75 @@ button {
     cursor: pointer;
 }
 
-@media screen and (max-width: 1279px) {
-
-.our-friends__slider__cards {
-
-    column-gap: 30px;
+@media (min-width: 770px) and (max-width: 1279px) {
+    .our-friends__slider__cards {
+        column-gap: 30px;
+        justify-content: center;
+    }
 }
+
+@media (min-width: 770px) and (max-width: 963px) {
+    .footer {
+        padding: 14px 64px 0;
+        flex-wrap: wrap;
+        row-gap: 65px;
+    }
+
+    .footer__image-dog {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 332px) and (max-width: 429px) {
+    .footer {
+        padding: 30px 10px 0;
+        justify-content: center;
+        row-gap: 40px;
+    }
+
+    .footer__contacts {
+        padding: 0;
+    }
+
+    .footer__title {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+    }
+
+    .footer__address__line {
+        justify-content: center;
+    }
+
+    .footer__address {
+        padding: 0;
+    }
+
+    .footer__address > p {
+        width: 270px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .footer__address > div:nth-child(3) {
+        justify-content: start;
+    }
+
+    .footer__image-dog {
+        background: url(./../images/footer-puppy.png);
+        width: 100%;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
 
 @media screen and (max-width: 769px) {
     .footer {
@@ -633,7 +696,6 @@ button {
     .footer__address > div:nth-child(3) {
         justify-content: start;
     }
-
 
     .our-friends {
         padding: 42px 10px;
