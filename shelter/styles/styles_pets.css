@@ -481,6 +481,13 @@ button {
     cursor: pointer;
 }
 
+@media screen and (max-width: 1279px) {
+
+.our-friends__slider__cards {
+
+    column-gap: 30px;
+}
+
 @media screen and (max-width: 769px) {
     .footer {
         padding: 14px 64px 0;
