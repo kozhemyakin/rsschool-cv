@@ -779,7 +779,7 @@ button {
     }
 
     .footer {
-        padding: 30px 30px 0;
+        padding: 14px 64px 0;
         flex-wrap: wrap;
         row-gap: 65px;
     }
@@ -1010,7 +1010,7 @@ button {
 
     .footer {
         padding: 30px 10px 0;
-        justify-content: center;
+        justify-content: space-around;
         row-gap: 40px;
     }
 
@@ -1642,7 +1642,7 @@ button {
     left: 0;
   }
 
-  .menu__btn > span,
+.menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
   transition-duration: .25s;

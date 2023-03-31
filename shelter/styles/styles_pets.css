@@ -35,6 +35,14 @@ h1 {
     color: #545454;
 }
 
+.hamburger-menu {
+    display: none;
+}
+
+.header__nav {
+    display: block;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -171,7 +179,6 @@ button {
     font-weight: 400;
     cursor: pointer;
 }
-
 
 .footer {
     padding: 40px 40px 0;
@@ -476,7 +483,7 @@ button {
 
 @media screen and (max-width: 769px) {
     .footer {
-        padding: 30px 30px 0;
+        padding: 14px 64px 0;
         flex-wrap: wrap;
         row-gap: 65px;
     }
@@ -500,4 +507,274 @@ button {
     .our-friends__slider__cards > div:nth-child(7), .our-friends__slider__cards > div:nth-child(8) {
         display: none;
     }
+
+    button {
+        padding: 13px 45px;
+    }
+
+    .header-container > .container {
+        padding: 0 30px;
+    }
+
+    .our-friends {
+        padding: 80px 94px 76px;
+    }
+}
+
+@media (min-width: 331px) and (max-width: 767px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .footer {
+        padding: 14px 64px 0;
+        flex-wrap: wrap;
+        row-gap: 65px;
+    }
+
+    .footer__image-dog {
+        margin: 0 auto;
+    }
+
+    .our-friends {
+        padding: 60px 30px 70px;
+    }
+
+    .our-friends__slider {
+        padding: 30px 0 40px;
+    }
+
+    .our-friends__slider__cards {
+        justify-content: center;
+        column-gap: 20px;
+    }
+
+    .our-friends__slider__cards > div:nth-child(7), .our-friends__slider__cards > div:nth-child(8) {
+        display: none;
+    }
+
+    button {
+        padding: 13px 45px;
+    }
+
+    .header-container > .container {
+        padding: 0 30px;
+    }
+
+    .our-friends {
+        padding: 80px 10px 76px;
+    }
+}
+
+@media (min-width: 331px) and (max-width: 712px) {
+    .footer {
+        padding: 14px 64px 0;
+        flex-wrap: wrap;
+        row-gap: 65px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .footer {
+        padding: 30px 10px 0;
+        justify-content: center;
+        row-gap: 40px;
+    }
+
+    .footer__contacts {
+        padding: 0;
+    }
+
+    .footer__title {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+    }
+
+    .footer__address__line {
+        justify-content: center;
+    }
+
+    .footer__address {
+        padding: 0;
+    }
+
+    .footer__address > p {
+        width: 270px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .footer__address > div:nth-child(3) {
+        justify-content: start;
+    }
+
+
+    .our-friends {
+        padding: 42px 10px;
+    }
+
+    .our-friends > h3 {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+        justify-content: center;
+    }
+
+    .our-friends__slider {
+        padding: 42px 0;
+    }
+
+    .our-friends__slider__cards {
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .our-friends__slider__cards > div:nth-child(4), 
+    .our-friends__slider__cards > div:nth-child(5), 
+    .our-friends__slider__cards > div:nth-child(6), 
+    .our-friends__slider__cards > div:nth-child(7), 
+    .our-friends__slider__cards > div:nth-child(8) {
+        display: none;
+    }
+
+    button {
+        padding: 13px 45px;
+    }
+
+    .header-container > .container {
+        padding: 0 30px;
+    }
+
+    .header-container > .container {
+        padding: 0 20px;
+    }
+
+    .pagination {
+        gap: 10px;
+    }
+}
+
+
+
+
+
+/* burger menu */
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #F1CDB3;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  /* контейнер меню */
+.menu__box {
+    display: block;
+    /* position: fixed; */
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+.hamburger-menu {
+    margin-right: 10px;
+
+    margin-top: 39px;
 }
