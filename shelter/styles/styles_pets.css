@@ -1,11 +1,15 @@
 html {
     scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
 }
 
 body {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 
 h1, h2, h3, p {
