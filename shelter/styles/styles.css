@@ -495,7 +495,7 @@ button {
     gap: 15px;
     display: flex;
     justify-content: start;
-    max-width: 319px;
+    max-width: 320px;
 }
 
 .donation__text--card--number--numbers {
@@ -659,6 +659,53 @@ button {
     .not-only {
         padding-right: 0;
     }
+
+    .not-only__content {
+        flex-direction: column;
+    }
+
+    .not-only__content__text {
+        align-self: center;
+        padding: 0;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 130%;
+        align-items: center;
+        color: #FFFFFF;
+        width: 460px;
+    }
+
+    .not-only__content__img {
+        align-self: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 593px;
+        margin-top: 100px;
+        width: 569px;
+    }
+
+    .donation {
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+
+    .donation__image {
+        width: 505px;
+        height: 261px;
+        margin-top: 0px;
+    }
+
+    .donation__text {
+        width: 380px;
+    }
+
+    .donation__text--card--number {
+        max-width: 320px;
+    }
+  
 }
 
 @media (min-width: 770px) and (max-width: 1180px) {
@@ -668,6 +715,18 @@ button {
 
     .our-friends__slider__cards > div:nth-of-type(3) {
         display: none;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 963px) {
+    .footer {
+        padding: 14px 64px 0;
+        flex-wrap: wrap;
+        row-gap: 65px;
+    }
+
+    .footer__image-dog {
+        margin: 0 auto;
     }
 }
 
@@ -1306,7 +1365,6 @@ button {
     }
 }
 
-
 @media screen and (max-width: 321px) {
     .hamburger-menu {
         display: block;
@@ -1563,7 +1621,6 @@ button {
         justify-content: start;
     }
 }
-
 
 /* burger menu */
 /* скрываем чекбокс */
