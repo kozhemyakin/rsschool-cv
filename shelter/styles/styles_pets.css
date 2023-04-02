@@ -548,6 +548,10 @@ button {
         background-size: contain;
         background-position: center;
     }
+
+    .pagination {
+        gap: 10px;
+    }
 }
 
 
