@@ -96,21 +96,23 @@ console.log(data)
 const burgerToggle = document.getElementById('menu__toggle');
 const burgerMenu = document.querySelector('.hamburger-menu');
 const menuBox = document.querySelector('.menu__box');
-const shadow = document.querySelector('.brown-container');
+const shadow = document.querySelector('.shadow-bg');
 
 menuBox.addEventListener('click', ()=> {
     burgerToggle.checked = false;
     document.body.classList.toggle('overflow-hidden-class');
     shadow.classList.toggle('shadow');
+    shadow.style.display = 'none';
+})
+
+shadow.addEventListener('click', ()=> {
+    burgerToggle.checked = false;
+    document.body.classList.toggle('overflow-hidden-class');
+    shadow.classList.toggle('shadow');
+    shadow.style.display = 'none';
 })
 
 burgerToggle.addEventListener('click', ()=> {
     document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
-})
-
-document.body.addEventListener('click', ()=> {
-    // burgerToggle.checked = false;
-    // document.body.classList.toggle('overflow-hidden-class');
-    // shadow.classList.toggle('shadow');
+    shadow.style.display = 'block';
 })
