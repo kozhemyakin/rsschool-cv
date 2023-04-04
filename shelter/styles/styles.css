@@ -1736,6 +1736,7 @@ button {
 
 .hamburger-menu {
     margin-right: 10px;
+    margin-top: 9px;
 }
 
 .menu__box> a:nth-child(1)::after {
