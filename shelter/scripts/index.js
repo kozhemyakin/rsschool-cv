@@ -1,7 +1,7 @@
 console.log('Scrore: 110/110')
 
 const data = [
-{
+    {
     "name": "Jennifer",
     "img": "../../assets/images/jennifer.png",
     "type": "Dog",
@@ -91,8 +91,6 @@ const data = [
     }
 ]
 
-console.log(data)
-
 const burgerToggle = document.getElementById('menu__toggle');
 const burgerMenu = document.querySelector('.hamburger-menu');
 const menuBox = document.querySelector('.menu__box');
@@ -115,4 +113,11 @@ shadow.addEventListener('click', ()=> {
 burgerToggle.addEventListener('click', ()=> {
     document.body.classList.toggle('overflow-hidden-class');
     shadow.style.display = 'block';
+})
+
+const card = document.querySelector('.our-friends__slider__card');
+
+card.addEventListener('click', (e)=> {
+    console.log(e)
+
 })

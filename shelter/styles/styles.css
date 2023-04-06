@@ -1765,3 +1765,50 @@ button {
     opacity: 0.7;
     transition: 1s;
 }
+
+.modal-window {
+    display: block;
+    position: fixed;
+    top: 136px;
+    left: 190px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.modal-window__content {
+    display: flex;
+    max-width: 70%;
+}
+
+.modal-window__content--image {
+    background-image: url("./../images/pets-katrine111.png");
+    width: 55%;
+
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.modal-window__content--description {
+    width: 45%;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__content--description--title {
+
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+
+}
+
+.modal-window__content--description--subtitle {
+    font-size: 20px;
+    line-height: 115%;
+}
