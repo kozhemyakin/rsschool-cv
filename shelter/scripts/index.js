@@ -115,9 +115,14 @@ burgerToggle.addEventListener('click', ()=> {
     shadow.style.display = 'block';
 })
 
-const card = document.querySelector('.our-friends__slider__card');
+const modalWindow = document.querySelector('.modal-window');
+const cards = document.querySelectorAll('.our-friends__slider__card');
 
-card.addEventListener('click', (e)=> {
-    console.log(e)
-
+cards.forEach((el) => {
+    el.addEventListener('click', function (e) {
+        // let petName = this.dataset.name;
+        // console.log(petName)
+        console.log(this.dataset.name)
+        modalWindow.style.display = 'flex';
+    })
 })

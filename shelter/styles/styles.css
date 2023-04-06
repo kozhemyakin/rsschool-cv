@@ -1767,23 +1767,27 @@ button {
 }
 
 .modal-window {
-    display: block;
+    display: none;
     position: fixed;
     top: 136px;
-    left: 190px;
+    left: 15%;
+    right: 15%;
+    max-width: 952px;
     margin: 0 auto;
-    max-width: 900px;
+    flex-direction: column;
 }
 
 .modal-window__content {
     display: flex;
-    max-width: 70%;
+    /* max-width: 70%; */
+    background: #FAFAFA;
+    border-radius: 9px;
 }
 
 .modal-window__content--image {
     background-image: url("./../images/pets-katrine111.png");
     width: 55%;
-
+    max-width: 500px;
     height: 500px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1791,6 +1795,7 @@ button {
 
 .modal-window__content--description {
     width: 45%;
+    max-width: 900px;
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -1798,10 +1803,16 @@ button {
     line-height: 110%;
     letter-spacing: 0.06em;
     color: #000000;
+    padding: 0 20px 0 29px;
+}
+
+.modal-window__content--description--text {
+    padding: 40px 0;
+    max-width: 350px;
 }
 
 .modal-window__content--description--title {
-
+    padding: 50px 0 10px;
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
@@ -1811,4 +1822,35 @@ button {
 .modal-window__content--description--subtitle {
     font-size: 20px;
     line-height: 115%;
+}
+
+.modal-window__krestik {
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+    padding-top: 5px;
+    text-align: center;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    align-self: end;
+    position: absolute;
+    left: 942px;
+    top: -52px;
+}
+
+.modal-window__content--description--list {
+    padding: 0;
+    margin: 0;
+    color: #F1CDB3;
+    padding-left: 16px;
+}
+
+.modal-window__content--description--list > li {
+    padding-bottom: 10px;
+}
+
+
+.modal-window__content--description--list > li > span {
+    color: #000000;
 }
