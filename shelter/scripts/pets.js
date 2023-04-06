@@ -141,7 +141,7 @@ cards.forEach((el) => {
         document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
         document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
         
-
+        // "url('./images/pets-scarlet.png')";
         
         console.log(petValues)
     })

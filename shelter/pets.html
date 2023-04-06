@@ -8,7 +8,6 @@
     <link href="https://fonts.cdnfonts.com/css/arial-2" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/georgia" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles_pets.css">
-    <script src="./scripts/index.js"></script>
   </head>
   <body>
     <section class="header-container">
@@ -45,42 +44,42 @@
         <h3>Our friends who<br> are looking for a house</h3>
         <div class="our-friends__slider">
           <div class="our-friends__slider__cards">
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Katrine">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Katrine</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Jennifer">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Jennifer</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Woody">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Woody</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Sophia">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Sophia</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Timmy">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Timmy</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Charly">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Charly</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Scarlett">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Scarlett</p>
               <button class="our-friends__slider__card--button">Learn more</button>
             </div>
-            <div class="our-friends__slider__card">
+            <div class="our-friends__slider__card" data-name="Freddie">
               <div class="our-friends__slider__card--image"></div>
               <p class="our-friends__slider__card--name">Freddie</p>
               <button class="our-friends__slider__card--button">Learn more</button>
@@ -93,6 +92,23 @@
           <div class="pagination__item current">1</div>
           <div class="pagination__item">ᐳ</div>
           <div class="pagination__item">ᐳᐳ</div>
+        </div>
+      </div>
+      <div class="modal-window">
+        <div class="modal-window__krestik">&times;</div>
+        <div class="modal-window__content">
+          <div class="modal-window__content--image"></div>
+          <div class="modal-window__content--description">
+            <p class="modal-window__content--description--title">Jennifer</p>
+            <p class="modal-window__content--description--subtitle">Dog - Labrador</p>
+            <p class="modal-window__content--description--text">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+            <ul class="modal-window__content--description--list">
+              <li><span><b>Age:</b> <span class="modal-window__content--description--list--age">2 months</span></span></li>
+              <li><span><b>Inoculations:</b> <span class="modal-window__content--description--list--inoculations">none</span></span></li>
+              <li><span><b>Diseases:</b> <span class="modal-window__content--description--list--diseases">none</span></span></li>
+              <li><span><b>Parasites:</b> <span class="modal-window__content--description--list--parasites">none</span></span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -123,5 +139,7 @@
         <div class="footer__image-dog"></div>
       </div>
     </footer>
+    <div class="modal-bg"></div>
   </body>
+  <script src="./scripts/pets.js"></script>
 </html>
