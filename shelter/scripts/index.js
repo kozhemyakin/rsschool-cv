@@ -116,13 +116,45 @@ burgerToggle.addEventListener('click', ()=> {
 })
 
 const modalWindow = document.querySelector('.modal-window');
+const modalWindowBg = document.querySelector('.modal-bg');
+
 const cards = document.querySelectorAll('.our-friends__slider__card');
+const krestik = document.querySelector('.modal-window__krestik');
 
 cards.forEach((el) => {
     el.addEventListener('click', function (e) {
+        document.body.classList.toggle('overflow-hidden-class');
+
         // let petName = this.dataset.name;
         // console.log(petName)
         console.log(this.dataset.name)
         modalWindow.style.display = 'flex';
+        modalWindowBg.style.display = 'block';
+
+        const petValues = data.find((pet) => this.dataset.name === pet.name)
+        document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
+        document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
+        document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
+        document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
+        document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
+        document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
+        document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
+        
+        
+        console.log(petValues)
     })
+})
+
+modalWindowBg.addEventListener('click', function (e) {
+    document.body.classList.toggle('overflow-hidden-class');
+
+    modalWindow.style.display = 'none';
+    modalWindowBg.style.display = 'none';
+})
+
+krestik.addEventListener('click', function () {
+    document.body.classList.toggle('overflow-hidden-class');
+
+    modalWindow.style.display = 'none';
+    modalWindowBg.style.display = 'none';
 })
