@@ -908,6 +908,8 @@ button {
     top: 136px;
     left: 15%;
     right: 15%;
+    top: 25%;
+    bottom: 25%;
     max-width: 952px;
     margin: 0 auto;
     flex-direction: column;
@@ -926,7 +928,7 @@ button {
     width: 55%;
     max-width: 500px;
     height: 500px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -975,6 +977,10 @@ button {
     left: 942px;
     top: -52px;
     cursor: pointer;
+}
+
+.modal-window__krestik:hover {
+    background-color: #B2B2B2;
 }
 
 .modal-window__content--description--list {
