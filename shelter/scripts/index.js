@@ -92,12 +92,12 @@ const data = [
 ]
 
 function chunk(arr, chunkSize) {
-const clone = [...arr]
-if (chunkSize <= 0) throw "Invalid chunk size";
-var R = [];
-for (var i=0,len=clone.length; i<len; i+=chunkSize)
-    R.push(clone.slice(i,i+chunkSize));
-return R;
+    const clone = [...arr]
+    if (chunkSize <= 0) throw "Invalid chunk size";
+    var R = [];
+    for (var i=0,len=clone.length; i<len; i+=chunkSize)
+        R.push(clone.slice(i,i+chunkSize));
+    return R;
 }
 
 const shuffle = (arr) => {
@@ -129,7 +129,6 @@ function addElement(parrent, image, name) {
     paragraph.appendChild(petName);
     button.appendChild(buttonText);
 
-
     parrent.append(card);
     card.append(cardImage)
     card.append(paragraph)
@@ -137,19 +136,17 @@ function addElement(parrent, image, name) {
 }
 
 function addSlide(slide) {
-    const slider = document.querySelector('.our-friends__slider__cards')
+    const slider = document.querySelector('.our-friends__slider__cards');
 
-
-    const slideWrapper = document.createElement("li")
+    const slideWrapper = document.createElement("li");
 
     slideWrapper.className = 'slide animate';
 
     slide.forEach((card) => {
-        addElement(slideWrapper, card.img, card.name)
+        addElement(slideWrapper, card.img, card.name);
     })
 
-    slider.appendChild(slideWrapper)
-
+    slider.appendChild(slideWrapper);
 }
 
 
@@ -186,27 +183,27 @@ burgerToggle.addEventListener('click', ()=> {
 const modalWindow = document.querySelector('.modal-window');
 const modalWindowBg = document.querySelector('.modal-bg');
 
-const cards = document.querySelectorAll('.our-friends__slider__card');
 const krestik = document.querySelector('.modal-window__krestik');
+// const cards = document.querySelectorAll('.our-friends__slider__card');
 
-cards.forEach((el) => {
-    el.addEventListener('click', function (e) {
-        document.body.classList.toggle('overflow-hidden-class');
+// cards.forEach((el) => {
+//     el.addEventListener('click', function (e) {
+//         document.body.classList.toggle('overflow-hidden-class');
+//         console.log('kek')
+//         modalWindow.style.display = 'flex';
+//         modalWindowBg.style.display = 'block';
 
-        modalWindow.style.display = 'flex';
-        modalWindowBg.style.display = 'block';
-
-        const petValues = data.find((pet) => this.dataset.name === pet.name)
-        document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
-        document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
-        document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
-        document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
-        document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
-        document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
-        document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
-        document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
-    })
-})
+//         const petValues = data.find((pet) => this.dataset.name === pet.name)
+//         document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
+//         document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
+//         document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
+//         document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
+//         document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
+//         document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
+//         document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
+//         document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
+//     })
+// })
 
 modalWindowBg.addEventListener('click', function (e) {
     document.body.classList.toggle('overflow-hidden-class');
@@ -238,8 +235,8 @@ const calculateSliderPerPage = (width) => {
 
     const slidesPerPageByScreenSize = {
         0: 1,
-        768: 2,
-        1280: 3,
+        770: 2,
+        1220: 3,
     }
 
     return Object.keys(slidesPerPageByScreenSize).reduce((acc, breakpoint) => {
@@ -250,7 +247,7 @@ const calculateSliderPerPage = (width) => {
     }, 1)
 }
 
-let cardsPerSlide = 1
+// let cardsPerSlide = 1
 
 const initSlider = () => {
     index = 0,
@@ -274,11 +271,8 @@ const initSlider = () => {
             }
         }
 
-
         return slide
     })
-
-    console.log(slides)
 
     slides.forEach((slide) => {
         addSlide(slide)
@@ -288,11 +282,9 @@ const initSlider = () => {
 
     amount = document.getElementsByClassName("slide").length;
 
-
-
     // get the width of the container
     moveOffset = parseInt(window.getComputedStyle(document.getElementById('carousel-container')).width, 10);
-    console.log(moveOffset)
+
     // calcuate the width of the carousel
     carousel.style.width = (amount * moveOffset) + 'px';
 
@@ -310,6 +302,26 @@ const initSlider = () => {
     // add the last item to the start so that translateX(-moveOffset) works (In case the first click is the previous button)
     document.getElementById('carousel').insertBefore(document.getElementById('carousel').lastChild, document.getElementById('carousel').children[0])
     
+    const cards = document.querySelectorAll('.our-friends__slider__card');
+
+    cards.forEach((el) => {
+        el.addEventListener('click', function (e) {
+            document.body.classList.toggle('overflow-hidden-class');
+            console.log('kek')
+            modalWindow.style.display = 'flex';
+            modalWindowBg.style.display = 'block';
+
+            const petValues = data.find((pet) => this.dataset.name === pet.name)
+            document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
+            document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
+            document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
+            document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
+            document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
+            document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
+            document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
+            document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
+        })
+    })
 }
 
 window.addEventListener('resize', function(event) {
@@ -323,7 +335,9 @@ window.addEventListener('resize', function(event) {
 document.addEventListener("DOMContentLoaded", function(event) 
 {
     initSlider()
-    // add click events to control arrows
+
+    
+
     document.getElementById('prev').addEventListener('click', prev, true);
     document.getElementById('next').addEventListener('click', next, true);
 });
@@ -345,7 +359,6 @@ function prev()
             slide.style.opacity = '1';    
             slide.style.transform = 'translateX('+(currTransl[i]+moveOffset)+'px)';
             currTransl[i] = currTransl[i]+moveOffset;
-            console.log(currTransl[i], moveOffset)
         }
         var outerSlide = document.getElementsByClassName("slide")[outerIndex];
         outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]-(moveOffset*amount))+'px)';

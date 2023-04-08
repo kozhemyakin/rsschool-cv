@@ -886,7 +886,7 @@ button {
     border-radius: 100px;
     align-self: end;
     position: absolute;
-    left: 942px;
+    left: unset;
     top: -52px;
     cursor: pointer;
 }
@@ -1109,6 +1109,12 @@ button {
     }
 }
 
+@media (min-width: 770px) and (max-width: 999px) {
+    #carousel li {
+        justify-content: flex-start;
+    }
+}
+
 @media (min-width: 770px) and (max-width: 963px) {
     .footer {
         padding: 14px 64px 0;
@@ -1118,6 +1124,28 @@ button {
 
     .footer__image-dog {
         margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .modal-window__content--image {
+        display: none;
+    }
+
+    .modal-window__content {
+        justify-content: center;
+    }
+
+    .modal-window__content--description--title {
+        padding-top: 10px;
+    }
+
+    .modal-window__krestik {
+        left: unset;
+    }
+
+    .modal-window__content--description {
+        width: 100%;
     }
 }
 
@@ -1499,6 +1527,30 @@ button {
 
     .footer__address > div:nth-child(3) {
         justify-content: start;
+    }
+}
+
+@media screen and (max-width: 464px) {
+    .button-arrow {
+        position: relative;
+    }
+
+    #carousel {
+        column-gap: 0px;
+    }
+
+    #carousel li {
+        justify-content: center;
+    }
+
+    .our-friends {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .button-arrow--prev {
+        order: 3;
     }
 }
 

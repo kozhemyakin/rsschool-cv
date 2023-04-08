@@ -91,10 +91,33 @@ const data = [
     }
 ]
 
+const shuffle = (arr) => arr
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+
+const shuffledData = shuffle(data);
+const shuffledData2 = shuffle(shuffledData);
+const shuffledData3 = shuffle(shuffledData2);
+const shuffledData4 = shuffle(shuffledData3);
+const shuffledData5 = shuffle(shuffledData4);
+const shuffledData6 = shuffle(shuffledData5);
+
 const burgerToggle = document.getElementById('menu__toggle');
 const burgerMenu = document.querySelector('.hamburger-menu');
 const menuBox = document.querySelector('.menu__box');
 const shadow = document.querySelector('.shadow-bg');
+const modalWindow = document.querySelector('.modal-window');
+const modalWindowBg = document.querySelector('.modal-bg');
+const krestik = document.querySelector('.modal-window__krestik');
+
+const nextBtn = document.querySelector('.right');
+const prevBtn = document.querySelector('.left');
+const leftEnd = document.querySelector('.left-end')
+const rightEnd = document.querySelector('.right-end')
+const left = document.querySelector('.pagination > div:nth-child(2)')
+
+let pageNumber = 1;
 
 menuBox.addEventListener('click', ()=> {
     burgerToggle.checked = false;
@@ -115,37 +138,7 @@ burgerToggle.addEventListener('click', ()=> {
     shadow.style.display = 'block';
 })
 
-const modalWindow = document.querySelector('.modal-window');
-const modalWindowBg = document.querySelector('.modal-bg');
 
-const cards = document.querySelectorAll('.our-friends__slider__card');
-const krestik = document.querySelector('.modal-window__krestik');
-
-cards.forEach((el) => {
-    el.addEventListener('click', function (e) {
-        document.body.classList.toggle('overflow-hidden-class');
-
-        // let petName = this.dataset.name;
-        // console.log(petName)
-        console.log(this.dataset.name)
-        modalWindow.style.display = 'flex';
-        modalWindowBg.style.display = 'block';
-
-        const petValues = data.find((pet) => this.dataset.name === pet.name)
-        document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
-        document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
-        document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
-        document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
-        document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
-        document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
-        document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
-        document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
-        
-        // "url('./images/pets-scarlet.png')";
-        
-        console.log(petValues)
-    })
-})
 
 modalWindowBg.addEventListener('click', function (e) {
     document.body.classList.toggle('overflow-hidden-class');
@@ -161,4 +154,234 @@ krestik.addEventListener('click', function () {
     modalWindowBg.style.display = 'none';
 })
 
+function addElement(image, name) {
+    const card = document.createElement("div");
+    const cardImage = document.createElement("div")
+    const button = document.createElement("button");
+    const paragraph = document.createElement("p");
+    const parrent = document.querySelector('.our-friends__slider__cards');
+    card.className = 'our-friends__slider__card';
+    
+    card.setAttribute('data-name', name);
+    cardImage.className = 'our-friends__slider__card--image';
+    paragraph.className = 'our-friends__slider__card--name';
+    button.className = 'our-friends__slider__card--button';
+  
+    cardImage.style.backgroundImage = `url('${image}')`;
+    cardImage.style.height = '270px';
+    cardImage.style.width = '270px';
+  
+    const petName = document.createTextNode(name);
+    const buttonText = document.createTextNode('Learn more');
+    
+    paragraph.appendChild(petName);
+    button.appendChild(buttonText);
 
+    parrent.append(card);
+    card.append(cardImage)
+    card.append(paragraph)
+    card.append(button)
+}
+
+let petCard = shuffledData.map((pet) => {
+    addElement(pet.img, pet.name)
+    
+})
+
+function pageCounterPlus() {
+    if (pageNumber === 6) {
+        return
+    }
+
+    pageNumber++;
+
+    if (pageNumber === 6) {
+        nextBtn.classList.remove('activePaginationItem')
+        rightEnd.classList.remove('activePaginationItem')
+    }
+
+    if (pageNumber > 1 && pageNumber < 6) {
+        leftEnd.classList.add('activePaginationItem')
+        left.classList.add('activePaginationItem')
+    }
+}
+
+function pageCounterMinus() {
+    pageNumber--;
+
+    if (pageNumber == 1) {
+        leftEnd.classList.remove('activePaginationItem')
+        left.classList.remove('activePaginationItem')
+    }
+
+    if (pageNumber > 1) {
+        leftEnd.classList.add('activePaginationItem')
+        left.classList.add('activePaginationItem')
+    }
+
+    if (pageNumber === 5) {
+        nextBtn.classList.add('activePaginationItem')
+        rightEnd.classList.add('activePaginationItem')
+    }
+}
+
+nextBtn.addEventListener('click', function (e) {
+    pageCounterPlus()
+
+    const slider = document.querySelector('.our-friends__slider__cards')
+    slider.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+        switch (pageNumber) {
+            case 1:
+                petCard = shuffledData.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 2:
+                petCard = shuffledData2.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 3:
+                petCard = shuffledData3.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 4:
+                petCard = shuffledData4.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 5:
+                petCard = shuffledData5.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 6:
+                petCard = shuffledData6.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+        }
+        addModalToCards()
+})
+
+prevBtn.addEventListener('click', function (e) {
+    if (pageNumber === 1) {
+        return
+    }
+
+    pageCounterMinus()
+
+    const prevCards = document.querySelector('.our-friends__slider__cards')
+    prevCards.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+        switch (pageNumber) {
+            case 1:
+                petCard = shuffledData.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 2:
+                petCard = shuffledData2.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 3:
+                petCard = shuffledData3.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 4:
+                petCard = shuffledData4.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 5:
+                petCard = shuffledData5.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 6:
+                petCard = shuffledData6.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+        }
+
+    addModalToCards()
+})
+
+rightEnd.addEventListener('click', function (e) {
+    pageNumber = 6;
+
+    const slider = document.querySelector('.our-friends__slider__cards')
+    slider.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+    petCard = shuffledData6.map((pet) => {
+        addElement(pet.img, pet.name)
+    })
+
+    leftEnd.classList.add('activePaginationItem')
+    left.classList.add('activePaginationItem')
+    nextBtn.classList.remove('activePaginationItem')
+    rightEnd.classList.remove('activePaginationItem')
+
+    addModalToCards()
+})
+
+leftEnd.addEventListener('click', function (e) {
+    pageNumber = 1;
+
+    const slider = document.querySelector('.our-friends__slider__cards')
+    slider.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+    petCard = shuffledData.map((pet) => {
+        addElement(pet.img, pet.name)
+    })
+
+    leftEnd.classList.remove('activePaginationItem')
+    left.classList.remove('activePaginationItem')
+    nextBtn.classList.add('activePaginationItem')
+    rightEnd.classList.add('activePaginationItem')
+
+    addModalToCards()
+})
+
+function addModalToCards() {
+    const cards = document.querySelectorAll('.our-friends__slider__card');
+
+    cards.forEach((el) => {
+        el.addEventListener('click', function (e) {
+            document.body.classList.toggle('overflow-hidden-class');
+    
+            modalWindow.style.display = 'flex';
+            modalWindowBg.style.display = 'block';
+    
+            const petValues = data.find((pet) => this.dataset.name === pet.name)
+            document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
+            document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
+            document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
+            document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
+            document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
+            document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
+            document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
+            document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
+    
+        })
+    })
+}
+
+addModalToCards()
