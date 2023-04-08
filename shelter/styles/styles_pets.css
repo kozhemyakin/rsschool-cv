@@ -333,6 +333,7 @@ button {
     background: #FAFAFA;
     border-radius: 9px;
     padding-bottom: 30px;
+    cursor: pointer;
 }
 
 .our-friends__slider__cards > div:nth-of-type(1) > div {
@@ -407,7 +408,6 @@ button {
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 30px;
-    cursor: pointer;
 }
 
 .our-friends__slider__card--image:hover {
