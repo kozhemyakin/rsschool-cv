@@ -1,0 +1,180 @@
+body {
+    background-color: rgb(253, 243, 228);
+}
+  
+.accordion {
+    display: flex;
+    justify-content: center;
+}
+  
+fieldset {
+    background-color: rgb(249, 213, 158);
+    border: none;
+    height: 100vh;
+    padding: 0;
+    width: 500px;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+  
+ul li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-top: 18px;
+    border-top: 1px dotted #dfeff4;
+    cursor: pointer;
+    background-color: rgb(249, 213, 158);
+    width: 100%;
+    font-size: 16px;
+}
+  
+label {
+    cursor: pointer;
+}
+
+ul li label i {
+    position: absolute;
+    transform: translate(-44px, 0);
+    margin-top: 0px;
+    right: 0;
+}
+
+ul li label i:before, ul li label i:after {
+    content: "";
+    position: absolute;
+    background-color: #f96b74;
+    width: 3px;
+    height: 9px;
+}
+
+ul li label i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+}
+
+ul li label i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+}
+
+ul li input[type=radio] ~ img {
+    cursor: pointer;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    display: none;
+}
+
+ul li input[type=radio]:checked ~ label i:before, ul li input[type=radio]:hover ~ label i:before  {
+    transform: translate(2px, 0) rotate(45deg);
+}
+
+ul li input[type=radio]:checked ~ i:after, ul li input[type=radio]:hover ~ i:after  {
+    transform: translate(-2px, 0) rotate(-45deg);
+}
+
+ul li input[type=radio]:checked ~ img {
+    height: 100px;
+    display: block;
+    opacity: 100;
+}
+  
+ul li:hover input[type=radio] ~ img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: block;
+    opacity: 100;
+}
+  
+img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: none;
+    margin: 0 auto;
+}
+  
+ul li input[type=radio]:checked ~ label img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: block;
+    opacity: 100;
+}
+  
+ul li:hover label > img {
+    height: 300px;
+    width: 300px;
+    padding-top: 10px;
+    display: block;
+    opacity: 100;
+}
+
+ul li:hover label {
+    color: rgb(26, 66, 243);
+}
+
+input {
+    visibility: hidden;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+li i:before, ul li i:after {
+    transition: all 1s ease-in-out;
+}
+  
+img {
+    animation: imgShowing 2s ease-in-out;
+}
+
+@keyframes imgShowing {
+    0% {
+        opacity: 0;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform-origin: top center;
+        transform: rotateX(0deg);
+    }
+}
+
+@media screen and (max-width: 821px) {
+    ul li {
+        font-size: 14px;
+    }
+    
+    fieldset {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    ul li {
+        font-size: 12px;
+    }
+
+    ul li label i {
+        transform: translate(-16px, 0);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    ul li {
+        font-size: 10px;
+    }
+
+    ul li label i {
+        transform: translate(-16px, 0);
+    }
+}

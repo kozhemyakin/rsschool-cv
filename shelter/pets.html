@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <title>kozhemyakin - shelter</title>
+    <link href="https://fonts.cdnfonts.com/css/arial-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/georgia" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles_pets.css">
+  </head>
+  <body>
+    <section class="header-container">
+      <div class="container">
+        <header class="header">
+        <a href="./index.html" class="header__logo">
+            <h1>Cozy House</h1>
+            <span>Shelter for pets in Boston</span>
+        </a>
+        <nav class="header__nav">
+            <a href="./index.html">About the shelter</a>
+            <a class="active">Our pets</a>
+            <a href="./index.html#help">Help the shelter</a>
+            <a href="#contacts">Contacts</a>
+        </nav>
+        <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox"></input>
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <div class="shadow-bg"></div>
+          <nav class="menu__box">
+            <a href="./index.html">About the shelter</a>
+            <a class="active">Our pets</a>
+            <a href="#help">Help the shelter</a>
+            <a href="#contacts">Contacts</a>
+          </nav>
+        </div>
+        </header>
+      </div>
+    </section>
+    <section class="gray-wrapper">
+      <div id="pets" class="container our-friends">
+        <h3>Our friends who<br> are looking for a house</h3>
+        <div class="our-friends__slider">
+          <div class="our-friends__slider__cards">
+          </div>
+        </div>
+        <div class="pagination">
+          <div class="pagination__item left-end">ᐸᐸ</div>
+          <div class="pagination__item left">ᐸ</div>
+          <div class="pagination__item current">1</div>
+          <div class="pagination__item right activePaginationItem">ᐳ</div>
+          <div class="pagination__item right-end activePaginationItem">ᐳᐳ</div>
+        </div>
+      </div>
+      <div class="modal-window">
+        <div class="modal-window__krestik">&times;</div>
+        <div class="modal-window__content">
+          <div class="modal-window__content--image"></div>
+          <div class="modal-window__content--description">
+            <p class="modal-window__content--description--title">Jennifer</p>
+            <p class="modal-window__content--description--subtitle">Dog - Labrador</p>
+            <p class="modal-window__content--description--text">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+            <ul class="modal-window__content--description--list">
+              <li><span><b>Age:</b> <span class="modal-window__content--description--list--age">2 months</span></span></li>
+              <li><span><b>Inoculations:</b> <span class="modal-window__content--description--list--inoculations">none</span></span></li>
+              <li><span><b>Diseases:</b> <span class="modal-window__content--description--list--diseases">none</span></span></li>
+              <li><span><b>Parasites:</b> <span class="modal-window__content--description--list--parasites">none</span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="brown-container">
+      <div id="contacts" class="container footer">
+        <div class="footer__contacts">
+          <p class="footer__title">For questions and suggestions</p>
+          <div class="footer__address__line pd40">
+            <div class="footer__icon-email"></div>
+            <a href="mailto:" class="footer__description">email@shelter.com</a>
+          </div>
+          <div class="footer__address__line">
+            <div class="footer__icon-phone"></div>
+            <a href="tel:+136745677554" class="footer__description">+13 674 567 75 54</a>
+          </div>
+        </div>
+        <div class="footer__address">
+          <p class="footer__title">We are waiting for your visit</p>
+          <div class="footer__address__line pd3432">
+            <div class="footer__icon-metka"></div>
+            <a href="https://goo.gl/maps/UvdGRy1qSHVLA7iq7" target="_blank" class="footer__description">1 Central Street, Boston<br> (entrance from the store)</a>
+          </div>
+          <div class="footer__address__line">
+            <div class="footer__icon-metka"></div>
+            <a href="https://goo.gl/maps/uudZNqA2ZDXVPygP6" target="_blank" class="footer__description">18 South Park, London </a>
+          </div>
+        </div>
+        <div class="footer__image-dog"></div>
+      </div>
+    </footer>
+    <div class="modal-bg"></div>
+  </body>
+  <script src="./scripts/pets.js"></script>
+</html>
