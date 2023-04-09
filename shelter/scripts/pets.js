@@ -88,30 +88,78 @@ const data = [
     "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
     "diseases": ["deafness", "blindness"],
     "parasites": ["lice", "fleas"]
-    },
+    }
 ]
 
-function chunk(arr, chunkSize) {
-    const clone = [...arr]
-    if (chunkSize <= 0) throw "Invalid chunk size";
-    var R = [];
-    for (var i=0,len=clone.length; i<len; i+=chunkSize)
-        R.push(clone.slice(i,i+chunkSize));
-    return R;
-}
-
-const shuffle = (arr) => {
-    return arr.sort(() => Math.round(Math.random() * 100) - 50);
-}
+const shuffle = (arr) => arr
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
 
 const shuffledData = shuffle(data);
+const shuffledData2 = shuffle(shuffledData);
+const shuffledData3 = shuffle(shuffledData2);
+const shuffledData4 = shuffle(shuffledData3);
+const shuffledData5 = shuffle(shuffledData4);
+const shuffledData6 = shuffle(shuffledData5);
 
-function addElement(parrent, image, name) {
+const burgerToggle = document.getElementById('menu__toggle');
+const burgerMenu = document.querySelector('.hamburger-menu');
+const menuBox = document.querySelector('.menu__box');
+const shadow = document.querySelector('.shadow-bg');
+const modalWindow = document.querySelector('.modal-window');
+const modalWindowBg = document.querySelector('.modal-bg');
+const krestik = document.querySelector('.modal-window__krestik');
+
+const nextBtn = document.querySelector('.right');
+const prevBtn = document.querySelector('.left');
+const leftEnd = document.querySelector('.left-end')
+const rightEnd = document.querySelector('.right-end')
+const left = document.querySelector('.pagination > div:nth-child(2)')
+
+let pageNumber = 1;
+
+menuBox.addEventListener('click', ()=> {
+    burgerToggle.checked = false;
+    document.body.classList.toggle('overflow-hidden-class');
+    shadow.classList.toggle('shadow');
+    shadow.style.display = 'none';
+})
+
+shadow.addEventListener('click', ()=> {
+    burgerToggle.checked = false;
+    document.body.classList.toggle('overflow-hidden-class');
+    shadow.classList.toggle('shadow');
+    shadow.style.display = 'none';
+})
+
+burgerToggle.addEventListener('click', ()=> {
+    document.body.classList.toggle('overflow-hidden-class');
+    shadow.style.display = 'block';
+})
+
+
+
+modalWindowBg.addEventListener('click', function (e) {
+    document.body.classList.toggle('overflow-hidden-class');
+
+    modalWindow.style.display = 'none';
+    modalWindowBg.style.display = 'none';
+})
+
+krestik.addEventListener('click', function () {
+    document.body.classList.toggle('overflow-hidden-class');
+
+    modalWindow.style.display = 'none';
+    modalWindowBg.style.display = 'none';
+})
+
+function addElement(image, name) {
     const card = document.createElement("div");
     const cardImage = document.createElement("div")
     const button = document.createElement("button");
     const paragraph = document.createElement("p");
-
+    const parrent = document.querySelector('.our-friends__slider__cards');
     card.className = 'our-friends__slider__card';
     
     card.setAttribute('data-name', name);
@@ -135,126 +183,193 @@ function addElement(parrent, image, name) {
     card.append(button)
 }
 
-function addSlide(slide) {
-    const slider = document.querySelector('.our-friends__slider__cards');
-
-    const slideWrapper = document.createElement("li");
-
-    slideWrapper.className = 'slide animate';
-
-    slide.forEach((card) => {
-        addElement(slideWrapper, card.img, card.name);
-    })
-
-    slider.appendChild(slideWrapper);
-}
-
-
-const burgerToggle = document.getElementById('menu__toggle');
-const burgerMenu = document.querySelector('.hamburger-menu');
-const menuBox = document.querySelector('.menu__box');
-const shadow = document.querySelector('.shadow-bg');
-
-menuBox.addEventListener('click', ()=> {
-    burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
-    shadow.style.display = 'none';
+let petCard = shuffledData.map((pet) => {
+    addElement(pet.img, pet.name)
+    
 })
 
-shadow.addEventListener('click', ()=> {
-    burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
-    shadow.style.display = 'none';
-})
-
-burgerToggle.addEventListener('click', ()=> {
-    document.body.classList.toggle('overflow-hidden-class');
-    shadow.style.display = 'block';
-})
-
-const modalWindow = document.querySelector('.modal-window');
-const modalWindowBg = document.querySelector('.modal-bg');
-
-const krestik = document.querySelector('.modal-window__krestik');
-
-modalWindowBg.addEventListener('click', function (e) {
-    document.body.classList.toggle('overflow-hidden-class');
-
-    modalWindow.style.display = 'none';
-    modalWindowBg.style.display = 'none';
-})
-
-krestik.addEventListener('click', function () {
-    document.body.classList.toggle('overflow-hidden-class');
-
-    modalWindow.style.display = 'none';
-    modalWindowBg.style.display = 'none';
-})
-
-/* slider */
-
-var index = 0,
-    amount = 0,
-    currTransl = [],
-    translationComplete = true,
-    moveOffset = 0;
-
-var transitionCompleted = function(){
-    translationComplete = true;
-}
-
-const calculateSliderPerPage = (width) => {
-
-    const slidesPerPageByScreenSize = {
-        0: 1,
-        770: 2,
-        1220: 3,
+function pageCounterPlus() {
+    if (pageNumber === 6) {
+        return
     }
 
-    return Object.keys(slidesPerPageByScreenSize).reduce((acc, breakpoint) => {
-        if(width >= breakpoint) {
-            acc = slidesPerPageByScreenSize[breakpoint]
-        }
-        return acc
-    }, 1)
+    pageNumber++;
+
+    if (pageNumber === 6) {
+        nextBtn.classList.remove('activePaginationItem')
+        rightEnd.classList.remove('activePaginationItem')
+    }
+
+    if (pageNumber > 1 && pageNumber < 6) {
+        leftEnd.classList.add('activePaginationItem')
+        left.classList.add('activePaginationItem')
+    }
 }
 
-const initSlides = () => {
-    cardsPerSlide = calculateSliderPerPage(window.innerWidth)
+function pageCounterMinus() {
+    pageNumber--;
+
+    if (pageNumber == 1) {
+        leftEnd.classList.remove('activePaginationItem')
+        left.classList.remove('activePaginationItem')
+    }
+
+    if (pageNumber > 1) {
+        leftEnd.classList.add('activePaginationItem')
+        left.classList.add('activePaginationItem')
+    }
+
+    if (pageNumber === 5) {
+        nextBtn.classList.add('activePaginationItem')
+        rightEnd.classList.add('activePaginationItem')
+    }
+}
+
+nextBtn.addEventListener('click', function (e) {
+    pageCounterPlus()
 
     const slider = document.querySelector('.our-friends__slider__cards')
-
     slider.innerHTML = '';
-    
-    const cardsChunks = chunk(shuffledData, cardsPerSlide)
-    const slides = cardsChunks.map((slide, i) => {
-        if (slide.length < cardsPerSlide && i === cardsChunks.length - 1) {
-            const shouldAddXItems = cardsPerSlide - slide.length;
 
-            if(shouldAddXItems >= 1) {
-                return [...slide, shuffledData[0]]
-            }
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+        switch (pageNumber) {
+            case 1:
+                petCard = shuffledData.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 2:
+                petCard = shuffledData2.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 3:
+                petCard = shuffledData3.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 4:
+                petCard = shuffledData4.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 5:
+                petCard = shuffledData5.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 6:
+                petCard = shuffledData6.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+        }
+        addModalToCards()
+})
+
+prevBtn.addEventListener('click', function (e) {
+    if (pageNumber === 1) {
+        return
+    }
+
+    pageCounterMinus()
+
+    const prevCards = document.querySelector('.our-friends__slider__cards')
+    prevCards.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+        switch (pageNumber) {
+            case 1:
+                petCard = shuffledData.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 2:
+                petCard = shuffledData2.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 3:
+                petCard = shuffledData3.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 4:
+                petCard = shuffledData4.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 5:
+                petCard = shuffledData5.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
+            case 6:
+                petCard = shuffledData6.map((pet) => {
+                    addElement(pet.img, pet.name)
+                })
+            break;
         }
 
-        return slide
+    addModalToCards()
+})
+
+rightEnd.addEventListener('click', function (e) {
+    pageNumber = 6;
+
+    const slider = document.querySelector('.our-friends__slider__cards')
+    slider.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+    petCard = shuffledData6.map((pet) => {
+        addElement(pet.img, pet.name)
     })
 
-    slides.forEach((slide) => {
-        addSlide(slide)
+    leftEnd.classList.add('activePaginationItem')
+    left.classList.add('activePaginationItem')
+    nextBtn.classList.remove('activePaginationItem')
+    rightEnd.classList.remove('activePaginationItem')
+
+    addModalToCards()
+})
+
+leftEnd.addEventListener('click', function (e) {
+    pageNumber = 1;
+
+    const slider = document.querySelector('.our-friends__slider__cards')
+    slider.innerHTML = '';
+
+    const currentPage = document.querySelector('.current')
+    currentPage.innerHTML = pageNumber;
+
+    petCard = shuffledData.map((pet) => {
+        addElement(pet.img, pet.name)
     })
 
-    document.getElementById('carousel').insertBefore(document.getElementById('carousel').lastChild, document.getElementById('carousel').children[0])
+    leftEnd.classList.remove('activePaginationItem')
+    left.classList.remove('activePaginationItem')
+    nextBtn.classList.add('activePaginationItem')
+    rightEnd.classList.add('activePaginationItem')
 
+    addModalToCards()
+})
+
+function addModalToCards() {
     const cards = document.querySelectorAll('.our-friends__slider__card');
 
     cards.forEach((el) => {
         el.addEventListener('click', function (e) {
             document.body.classList.toggle('overflow-hidden-class');
+    
             modalWindow.style.display = 'flex';
             modalWindowBg.style.display = 'block';
-
+    
             const petValues = data.find((pet) => this.dataset.name === pet.name)
             document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
             document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
@@ -264,116 +379,9 @@ const initSlides = () => {
             document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
             document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
             document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
+    
         })
     })
 }
 
-const initSlider = () => {
-    index = 0,
-    amount = 0,
-    currTransl = [],
-    translationComplete = true,
-    moveOffset = 0;
-
-    var carousel = document.getElementById('carousel');
-
-    amount = document.getElementsByClassName("slide").length;
-
-    moveOffset = parseInt(window.getComputedStyle(document.getElementById('carousel-container')).width, 10);
-
-    carousel.style.width = (amount * moveOffset) + 'px';
-
-    for(var i = 0; i < amount; i++)
-    {
-        currTransl[i] = -moveOffset;
-        document.getElementsByClassName("slide")[i].addEventListener("transitionend", transitionCompleted, true);                    
-        document.getElementsByClassName("slide")[i].addEventListener("webkitTransitionEnd", transitionCompleted, true);                    
-        document.getElementsByClassName("slide")[i].addEventListener("oTransitionEnd", transitionCompleted, true);                    
-        document.getElementsByClassName("slide")[i].addEventListener("MSTransitionEnd", transitionCompleted, true);    
-        
-        document.getElementsByClassName('slide')[i].style.width = moveOffset + 'px';
-    }
-
-}
-
-window.addEventListener('resize', function(event) {
-    const shouldReinitSlider = calculateSliderPerPage(window.innerWidth) !== cardsPerSlide
-
-    if(shouldReinitSlider) {
-        initSlides()
-    }
-
-    initSlider()
-    fixSliderTranslate()
-
-}, true);
-
-document.addEventListener("DOMContentLoaded", function(event) 
-{
-    initSlides()
-    initSlider()
-
-    document.getElementById('prev').addEventListener('click', prev, true);
-    document.getElementById('next').addEventListener('click', next, true);
-});
-
-const fixSliderTranslate = () => {
-    var outerIndex = (index) % amount;
-    for(var i = 0; i < amount; i++)
-    {
-        var slide = document.getElementsByClassName("slide")[i];    
-        slide.style.opacity = '1';    
-        slide.style.transform = 'translateX('+(currTransl[i]-moveOffset)+'px)';
-    }
-    var outerSlide = document.getElementsByClassName("slide")[outerIndex];
-    outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]+(moveOffset*amount))+'px)';
-    outerSlide.style.opacity = '0';
-}
-
-function prev()
-{
-    if (translationComplete === true)
-    {
-        translationComplete = false;
-        index--;
-        if (index == -1)
-        {
-            index = amount-1;
-        }
-        var outerIndex = (index) % amount;
-        for (var i = 0; i < amount; i++)
-        {
-            var slide = document.getElementsByClassName("slide")[i];
-            slide.style.opacity = '1';    
-            slide.style.transform = 'translateX('+(currTransl[i]+moveOffset)+'px)';
-            currTransl[i] = currTransl[i]+moveOffset;
-        }
-        var outerSlide = document.getElementsByClassName("slide")[outerIndex];
-        outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]-(moveOffset*amount))+'px)';
-        outerSlide.style.opacity = '0';
-        currTransl[outerIndex] = currTransl[outerIndex]-moveOffset*(amount);
-    }
-}
-
-function next()
-{
-    if (translationComplete === true)
-    {
-        translationComplete = false;
-        var outerIndex = (index) % amount;
-        index++;
-        for(var i = 0; i < amount; i++)
-        {
-            var slide = document.getElementsByClassName("slide")[i];    
-            slide.style.opacity = '1';    
-            slide.style.transform = 'translateX('+(currTransl[i]-moveOffset)+'px)';
-            currTransl[i] = currTransl[i]-moveOffset;
-        }
-
-        var outerSlide = document.getElementsByClassName("slide")[outerIndex];
-        outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]+(moveOffset*amount))+'px)';
-        outerSlide.style.opacity = '0';
-
-        currTransl[outerIndex] = currTransl[outerIndex]+moveOffset*(amount);
-    }
-}
+addModalToCards()
