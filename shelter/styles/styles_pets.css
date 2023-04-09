@@ -516,17 +516,12 @@ button {
 }
 
 @media screen and (max-width: 860px) {
-    .modal-window__content--image {
-        display: none;
-    }
-
     .modal-window__content {
         justify-content: center;
-
     }
 
     .modal-window__content--description--title {
-        padding-top: 20px !important;
+        padding-top: 0px !important;
     }
 
     .modal-window__krestik {
@@ -534,11 +529,18 @@ button {
     }
 
     .modal-window__content--description {
-        width: 400px !important;
+        width: auto;
+        padding: 0 9px 0 9px !important;
+        
     }
 
     .modal-window__content--description--text {
-    font-size: 13px;
+        padding: 20px 0 !important;
+        max-width: 260px;
+    }
+
+    .modal-window__content--image {
+        max-height: 373px;
     }
 }
 
@@ -638,6 +640,10 @@ button {
 }
 
 @media (min-width: 331px) and (max-width: 767px) {
+    .modal-window__content--image {
+        display: none;
+    }
+    
     .hamburger-menu {
         display: block;
     }

@@ -150,12 +150,6 @@ function addSlide(slide) {
 }
 
 
-// const petCard = shuffledData.map((pet) => {
-//     const cardsDiv = document.querySelector('.our-friends__slider__cards');
-
-//     addElement(cardsDiv, pet.img, pet.name)
-// })
-
 const burgerToggle = document.getElementById('menu__toggle');
 const burgerMenu = document.querySelector('.hamburger-menu');
 const menuBox = document.querySelector('.menu__box');
@@ -184,26 +178,6 @@ const modalWindow = document.querySelector('.modal-window');
 const modalWindowBg = document.querySelector('.modal-bg');
 
 const krestik = document.querySelector('.modal-window__krestik');
-// const cards = document.querySelectorAll('.our-friends__slider__card');
-
-// cards.forEach((el) => {
-//     el.addEventListener('click', function (e) {
-//         document.body.classList.toggle('overflow-hidden-class');
-//         console.log('kek')
-//         modalWindow.style.display = 'flex';
-//         modalWindowBg.style.display = 'block';
-
-//         const petValues = data.find((pet) => this.dataset.name === pet.name)
-//         document.querySelector('.modal-window__content--description--title').textContent = petValues.name;
-//         document.querySelector('.modal-window__content--description--subtitle').textContent = `${petValues.type} - ${petValues.breed}`;
-//         document.querySelector('.modal-window__content--description--text').textContent = petValues.description;
-//         document.querySelector('.modal-window__content--description--list--age').textContent = petValues.age;
-//         document.querySelector('.modal-window__content--description--list--inoculations').textContent = petValues.inoculations;
-//         document.querySelector('.modal-window__content--description--list--diseases').textContent = petValues.diseases;
-//         document.querySelector('.modal-window__content--description--list--parasites').textContent = petValues.parasites;
-//         document.querySelector('.modal-window__content--image').style.backgroundImage = `url('${petValues.img}')`;
-//     })
-// })
 
 modalWindowBg.addEventListener('click', function (e) {
     document.body.classList.toggle('overflow-hidden-class');
@@ -219,7 +193,7 @@ krestik.addEventListener('click', function () {
     modalWindowBg.style.display = 'none';
 })
 
-/* sdfjhdsjkhfkhjdsfkjhdsjkhfhjskdfhkdsf */
+/* slider */
 
 var index = 0,
     amount = 0,
@@ -247,14 +221,7 @@ const calculateSliderPerPage = (width) => {
     }, 1)
 }
 
-// let cardsPerSlide = 1
-
-const initSlider = () => {
-    index = 0,
-    amount = 0,
-    currTransl = [],
-    translationComplete = true,
-    moveOffset = 0;
+const initSlides = () => {
     cardsPerSlide = calculateSliderPerPage(window.innerWidth)
 
     const slider = document.querySelector('.our-friends__slider__cards')
@@ -278,36 +245,13 @@ const initSlider = () => {
         addSlide(slide)
     })
 
-    var carousel = document.getElementById('carousel');
-
-    amount = document.getElementsByClassName("slide").length;
-
-    // get the width of the container
-    moveOffset = parseInt(window.getComputedStyle(document.getElementById('carousel-container')).width, 10);
-
-    // calcuate the width of the carousel
-    carousel.style.width = (amount * moveOffset) + 'px';
-
-    // prevent multiple click when transition
-    for(var i = 0; i < amount; i++)
-    {
-        currTransl[i] = -moveOffset;
-        document.getElementsByClassName("slide")[i].addEventListener("transitionend", transitionCompleted, true);                    
-        document.getElementsByClassName("slide")[i].addEventListener("webkitTransitionEnd", transitionCompleted, true);                    
-        document.getElementsByClassName("slide")[i].addEventListener("oTransitionEnd", transitionCompleted, true);                    
-        document.getElementsByClassName("slide")[i].addEventListener("MSTransitionEnd", transitionCompleted, true);    
-        
-        document.getElementsByClassName('slide')[i].style.width = moveOffset + 'px';
-    }
-    // add the last item to the start so that translateX(-moveOffset) works (In case the first click is the previous button)
     document.getElementById('carousel').insertBefore(document.getElementById('carousel').lastChild, document.getElementById('carousel').children[0])
-    
+
     const cards = document.querySelectorAll('.our-friends__slider__card');
 
     cards.forEach((el) => {
         el.addEventListener('click', function (e) {
             document.body.classList.toggle('overflow-hidden-class');
-            console.log('kek')
             modalWindow.style.display = 'flex';
             modalWindowBg.style.display = 'block';
 
@@ -324,23 +268,67 @@ const initSlider = () => {
     })
 }
 
+const initSlider = () => {
+    index = 0,
+    amount = 0,
+    currTransl = [],
+    translationComplete = true,
+    moveOffset = 0;
+
+    var carousel = document.getElementById('carousel');
+
+    amount = document.getElementsByClassName("slide").length;
+
+    moveOffset = parseInt(window.getComputedStyle(document.getElementById('carousel-container')).width, 10);
+
+    carousel.style.width = (amount * moveOffset) + 'px';
+
+    for(var i = 0; i < amount; i++)
+    {
+        currTransl[i] = -moveOffset;
+        document.getElementsByClassName("slide")[i].addEventListener("transitionend", transitionCompleted, true);                    
+        document.getElementsByClassName("slide")[i].addEventListener("webkitTransitionEnd", transitionCompleted, true);                    
+        document.getElementsByClassName("slide")[i].addEventListener("oTransitionEnd", transitionCompleted, true);                    
+        document.getElementsByClassName("slide")[i].addEventListener("MSTransitionEnd", transitionCompleted, true);    
+        
+        document.getElementsByClassName('slide')[i].style.width = moveOffset + 'px';
+    }
+
+}
+
 window.addEventListener('resize', function(event) {
     const shouldReinitSlider = calculateSliderPerPage(window.innerWidth) !== cardsPerSlide
 
     if(shouldReinitSlider) {
-        initSlider()
+        initSlides()
     }
+
+    initSlider()
+    fixSliderTranslate()
+
 }, true);
 
 document.addEventListener("DOMContentLoaded", function(event) 
 {
+    initSlides()
     initSlider()
-
-    
 
     document.getElementById('prev').addEventListener('click', prev, true);
     document.getElementById('next').addEventListener('click', next, true);
 });
+
+const fixSliderTranslate = () => {
+    var outerIndex = (index) % amount;
+    for(var i = 0; i < amount; i++)
+    {
+        var slide = document.getElementsByClassName("slide")[i];    
+        slide.style.opacity = '1';    
+        slide.style.transform = 'translateX('+(currTransl[i]-moveOffset)+'px)';
+    }
+    var outerSlide = document.getElementsByClassName("slide")[outerIndex];
+    outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]+(moveOffset*amount))+'px)';
+    outerSlide.style.opacity = '0';
+}
 
 function prev()
 {
@@ -381,9 +369,11 @@ function next()
             slide.style.transform = 'translateX('+(currTransl[i]-moveOffset)+'px)';
             currTransl[i] = currTransl[i]-moveOffset;
         }
+
         var outerSlide = document.getElementsByClassName("slide")[outerIndex];
         outerSlide.style.transform = 'translateX('+(currTransl[outerIndex]+(moveOffset*amount))+'px)';
         outerSlide.style.opacity = '0';
+
         currTransl[outerIndex] = currTransl[outerIndex]+moveOffset*(amount);
     }
 }
