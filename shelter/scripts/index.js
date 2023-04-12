@@ -158,26 +158,27 @@ const menuBtn = document.querySelector('.menu__btn');
 
 menuBox.addEventListener('click', ()=> {
     burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
+    document.body.classList.remove('overflow-hidden-class');
     // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
 
 shadow.addEventListener('click', ()=> {
     burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
+    document.body.classList.remove('overflow-hidden-class');
     // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
 
 burgerToggle.addEventListener('click', ()=> {
-    document.body.classList.toggle('overflow-hidden-class');
+    document.body.classList.add('overflow-hidden-class');
     shadow.style.display = 'block';
+    
 })
 
 menuBtn.addEventListener('click', ()=> {
     burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
+    // document.body.classList.toggle('overflow-hidden-class');
     // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
