@@ -158,7 +158,7 @@ const shadow = document.querySelector('.shadow-bg');
 menuBox.addEventListener('click', ()=> {
     burgerToggle.checked = false;
     document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
+    // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
 
