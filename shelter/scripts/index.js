@@ -154,6 +154,7 @@ const burgerToggle = document.getElementById('menu__toggle');
 const burgerMenu = document.querySelector('.hamburger-menu');
 const menuBox = document.querySelector('.menu__box');
 const shadow = document.querySelector('.shadow-bg');
+const menuBtn = document.querySelector('.menu__btn');
 
 menuBox.addEventListener('click', ()=> {
     burgerToggle.checked = false;
@@ -165,7 +166,7 @@ menuBox.addEventListener('click', ()=> {
 shadow.addEventListener('click', ()=> {
     burgerToggle.checked = false;
     document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
+    // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
 
@@ -173,6 +174,14 @@ burgerToggle.addEventListener('click', ()=> {
     document.body.classList.toggle('overflow-hidden-class');
     shadow.style.display = 'block';
 })
+
+menuBtn.addEventListener('click', ()=> {
+    burgerToggle.checked = false;
+    document.body.classList.toggle('overflow-hidden-class');
+    // shadow.classList.toggle('shadow');
+    shadow.style.display = 'none';
+})
+
 
 const modalWindow = document.querySelector('.modal-window');
 const modalWindowBg = document.querySelector('.modal-bg');
