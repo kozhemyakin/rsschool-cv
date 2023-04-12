@@ -116,26 +116,36 @@ const prevBtn = document.querySelector('.left');
 const leftEnd = document.querySelector('.left-end')
 const rightEnd = document.querySelector('.right-end')
 const left = document.querySelector('.pagination > div:nth-child(2)')
+const menuBtn = document.querySelector('.menu__btn');
+const menuBtnSpan = document.querySelector('.menu__btn > span');
 
 let pageNumber = 1;
 
 menuBox.addEventListener('click', ()=> {
     burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
+    document.body.classList.remove('overflow-hidden-class');
+    // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
 
 shadow.addEventListener('click', ()=> {
     burgerToggle.checked = false;
-    document.body.classList.toggle('overflow-hidden-class');
-    shadow.classList.toggle('shadow');
+    document.body.classList.remove('overflow-hidden-class');
+    // shadow.classList.toggle('shadow');
     shadow.style.display = 'none';
 })
 
 burgerToggle.addEventListener('click', ()=> {
-    document.body.classList.toggle('overflow-hidden-class');
+    document.body.classList.add('overflow-hidden-class');
     shadow.style.display = 'block';
+    
+})
+
+menuBtn.addEventListener('click', ()=> {
+    burgerToggle.checked = false;
+    // document.body.classList.toggle('overflow-hidden-class');
+    // shadow.classList.toggle('shadow');
+    shadow.style.display = 'none';
 })
 
 

@@ -838,28 +838,10 @@ button {
     top: 8px;
   }
 
+
+
   /* контейнер меню */
 .menu__box {
-    /* display: flex; */
-    /* display: none; */
-    /* flex-direction: column;
-    gap: 40px;
-    position: absolute;
-    visibility: hidden;
-    top: 0; */
-    /* right: -100%; */
-    /* right: 0;
-    width: 320px;
-    height: 100vh;
-    margin: 0;
-    padding-top: 248px;
-    list-style: none;
-    text-align: center;
-    background: #292929;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    transition: 1s;
-    z-index: 2; */
-
     padding-top: 248px;
     list-style: none;
     text-align: center;
@@ -876,7 +858,7 @@ button {
     height: 100vh;
     top: 0;
     right: -320px;
-    transition: left 1s;
+    transition: left 0.5s;
     z-index: 2;
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -946,7 +928,7 @@ button {
     top: 0;
     left: 0;
     opacity: 0.7;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 
@@ -1058,4 +1040,8 @@ button {
     left: 0;
     opacity: 0.7;
     transition: 1s;
+}
+
+.displayedNone {
+    display: none;
 }
