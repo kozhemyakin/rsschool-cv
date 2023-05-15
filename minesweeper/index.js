@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const containerDiv = document.createElement('div');
+  const gridDiv = document.createElement('div');
+  const resultsDiv = document.createElement('div');
+  document.body.appendChild(containerDiv);
+  containerDiv.setAttribute("class", "container");
+  gridDiv.setAttribute("class", "grid");
+  resultsDiv.setAttribute("class", "results");
+  containerDiv.appendChild( gridDiv );
+  containerDiv.appendChild( resultsDiv );
   let height = 10
   let bombsQty = 10
   let flags = 0
