@@ -1,3 +1,5 @@
 # rsschool-cv
 
-Shelter task: https://kozhemyakin.github.io/rsschool-cv/shelter/
+Markdown CV: https://kozhemyakin.github.io/rsschool-cv/cv
+
+Html&CSS&JS CV: https://kozhemyakin.github.io/rsschool-cv/
